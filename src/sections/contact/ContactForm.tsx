@@ -64,7 +64,7 @@ export default function ContactForm() {
                 name="name"
                 required
                 className="w-full bg-white/5 border border-white/10 rounded-full px-5 py-4 font-body-md placeholder:text-outline/50 transition-all duration-300 focus:outline-none focus:border-[#d0bcff] focus:shadow-[0_0_20px_rgba(208,188,255,0.15)]"
-                placeholder="Yasin Kazi"
+                placeholder="Your Name"
                 type="text"
               />
             </div>

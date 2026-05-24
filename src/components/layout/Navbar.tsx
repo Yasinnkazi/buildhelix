@@ -102,19 +102,19 @@ export default function Navbar() {
             />
 
             <motion.div
-              initial={{ opacity: 0, x: "80%" }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: "80%" }}
-              transition={{ type: "spring", damping: 28, stiffness: 260 }}
-              className="fixed inset-y-0 right-0 w-full max-w-sm z-[60] md:hidden overflow-y-auto"
+              initial={{ opacity: 0, x: "60%", scale: 0.9 }}
+              animate={{ opacity: 1, x: 0, scale: 1 }}
+              exit={{ opacity: 0, x: "60%", scale: 0.9 }}
+              transition={{ type: "spring", damping: 30, stiffness: 250 }}
+              className="fixed top-24 right-4 w-[85vw] max-w-sm max-h-[80vh] z-[60] md:hidden overflow-y-auto rounded-3xl shadow-2xl shadow-black/50"
               style={{ background: "var(--color-background, #121414)" }}
             >
-              <div className="absolute inset-0 backdrop-blur-3xl" style={{ background: "var(--color-background, #121414)", opacity: 0.98 }} />
+              <div className="absolute inset-0 backdrop-blur-3xl rounded-3xl" style={{ background: "var(--color-background, #121414)", opacity: 0.98 }} />
 
-              <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-10 py-24">
+              <div className="relative z-10 flex flex-col items-center justify-center px-10 py-16">
                 {/* Close button */}
                 <div
-                  className="absolute top-6 right-6 w-10 h-10 rounded-full flex items-center justify-center cursor-pointer transition-all duration-300 hover:bg-white/10 active:scale-90 z-20"
+                  className="absolute top-5 right-5 w-10 h-10 rounded-full flex items-center justify-center cursor-pointer transition-all duration-300 hover:bg-white/10 active:scale-90 z-20"
                   style={{
                     backdropFilter: "blur(16px)",
                     background: "var(--glass-bg, rgba(255,255,255,0.03))",
