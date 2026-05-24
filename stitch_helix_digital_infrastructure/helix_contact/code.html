@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Helix | Contact</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Chivo:wght@600;700&amp;family=Inter:wght@400&amp;family=Geist:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary-fixed": "#e9ddff",
+                    "surface-dim": "#121414",
+                    "primary-container": "#a078ff",
+                    "on-primary-fixed": "#23005c",
+                    "on-tertiary": "#283044",
+                    "secondary-fixed": "#d8e2ff",
+                    "surface-variant": "#333535",
+                    "error-container": "#93000a",
+                    "on-tertiary-container": "#22293d",
+                    "primary-fixed-dim": "#d0bcff",
+                    "surface-tint": "#d0bcff",
+                    "secondary-fixed-dim": "#adc6ff",
+                    "outline": "#958ea0",
+                    "on-primary-container": "#340080",
+                    "on-secondary": "#002e6a",
+                    "background": "#121414",
+                    "surface-container-low": "#1a1c1c",
+                    "tertiary-fixed-dim": "#bec6e0",
+                    "surface": "#121414",
+                    "on-surface": "#e2e2e2",
+                    "surface-container-high": "#282a2b",
+                    "on-background": "#e2e2e2",
+                    "on-secondary-fixed-variant": "#004395",
+                    "inverse-primary": "#6d3bd7",
+                    "tertiary": "#bec6e0",
+                    "on-error": "#690005",
+                    "on-primary": "#3c0091",
+                    "secondary-container": "#0566d9",
+                    "surface-container-highest": "#333535",
+                    "on-tertiary-fixed-variant": "#3f465c",
+                    "surface-container": "#1e2020",
+                    "inverse-on-surface": "#2f3131",
+                    "on-tertiary-fixed": "#131b2e",
+                    "on-surface-variant": "#cbc3d7",
+                    "on-secondary-container": "#e6ecff",
+                    "primary": "#d0bcff",
+                    "on-primary-fixed-variant": "#5516be",
+                    "outline-variant": "#494454",
+                    "on-secondary-fixed": "#001a42",
+                    "inverse-surface": "#e2e2e2",
+                    "tertiary-container": "#8990a8",
+                    "error": "#ffb4ab",
+                    "surface-container-lowest": "#0c0f0f",
+                    "on-error-container": "#ffdad6",
+                    "secondary": "#adc6ff",
+                    "tertiary-fixed": "#dae2fd",
+                    "surface-bright": "#38393a"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "container-max": "1440px",
+                    "gutter": "24px",
+                    "margin-desktop": "64px",
+                    "margin-mobile": "20px",
+                    "unit": "8px"
+            },
+            "fontFamily": {
+                    "label-md": ["Geist"],
+                    "label-sm": ["Geist"],
+                    "headline-lg": ["Chivo"],
+                    "headline-lg-mobile": ["Chivo"],
+                    "display-2xl": ["Chivo"],
+                    "body-md": ["Inter"],
+                    "display-lg": ["Chivo"],
+                    "body-lg": ["Inter"]
+            },
+            "fontSize": {
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "500"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "display-2xl": ["72px", {"lineHeight": "80px", "letterSpacing": "-0.04em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.03em", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+      body {
+        background-color: #121414;
+        color: #e2e2e2;
+        -webkit-font-smoothing: antialiased;
+      }
+      .glass-card {
+        background: rgba(255, 255, 255, 0.03);
+        backdrop-filter: blur(24px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      .glow-pulse {
+        animation: pulse-glow 8s ease-in-out infinite;
+      }
+      @keyframes pulse-glow {
+        0%, 100% { opacity: 0.3; transform: scale(1); }
+        50% { opacity: 0.6; transform: scale(1.1); }
+      }
+      .magnetic-btn {
+        transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+      }
+      .magnetic-btn:hover {
+        transform: scale(1.02) translateY(-2px);
+      }
+      input:focus, textarea:focus {
+        outline: none;
+        border-color: #d0bcff !important;
+        box-shadow: 0 0 20px rgba(208, 188, 255, 0.15);
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body-md text-body-md overflow-x-hidden">
+<!-- Atmospheric Background Elements -->
+<div class="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
+<div class="absolute -top-[20%] -left-[10%] w-[60%] h-[60%] rounded-full bg-primary/10 blur-[120px] glow-pulse"></div>
+<div class="absolute bottom-[10%] -right-[5%] w-[40%] h-[50%] rounded-full bg-secondary-container/10 blur-[100px] glow-pulse" style="animation-delay: -4s;"></div>
+</div>
+<!-- Navigation Shell -->
+<nav class="fixed top-4 left-1/2 -translate-x-1/2 w-[90%] max-w-7xl rounded-full bg-surface/10 backdrop-blur-xl border border-white/10 flex justify-between items-center px-8 py-3 z-50 shadow-2xl">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="blur_on">blur_on</span>
+<span class="font-headline-lg text-headline-lg tracking-tighter text-on-surface">HELIX</span>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-all duration-300 hover:scale-105" href="#">Home</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-all duration-300 hover:scale-105" href="#">Services</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-all duration-300 hover:scale-105" href="#">Projects</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-all duration-300 hover:scale-105" href="#">About</a>
+<a class="font-label-md text-label-md text-primary border-b border-primary/50 transition-all duration-300 hover:scale-105" href="#">Contact</a>
+</div>
+<button class="font-label-md text-label-md text-primary bg-white/5 hover:bg-white/10 px-6 py-2 rounded-full border border-white/10 transition-all duration-300 hover:scale-105 active:scale-95">Book a Call</button>
+</nav>
+<!-- Main Content Canvas -->
+<main class="relative pt-40 pb-24 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+<!-- Left: Headline and Contact Info -->
+<div class="lg:col-span-5 space-y-12">
+<div class="space-y-4">
+<span class="font-label-md text-label-md text-primary uppercase tracking-widest">Connect with us</span>
+<h1 class="font-display-lg text-display-lg md:font-display-2xl md:text-display-2xl leading-tight">LET'S BUILD SOMETHING MODERN.</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-md">
+                        Transforming high-performance concepts into cinematic digital realities. Reach out via the form or our direct channels.
+                    </p>
+</div>
+<div class="space-y-8">
+<div class="group flex items-center gap-6 p-6 rounded-lg glass-card border border-white/5 hover:border-primary/20 transition-all duration-500">
+<div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="mail">mail</span>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-outline uppercase">Email Address</p>
+<p class="font-body-lg text-body-lg text-on-surface">buildhelix@gmail.com</p>
+</div>
+</div>
+<div class="group flex items-center gap-6 p-6 rounded-lg glass-card border border-white/5 hover:border-primary/20 transition-all duration-500">
+<div class="w-12 h-12 rounded-full bg-secondary-container/10 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined" data-icon="call">call</span>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-outline uppercase">Direct Line</p>
+<p class="font-body-lg text-body-lg text-on-surface">+91 90045 56455</p>
+</div>
+</div>
+</div>
+<div class="flex flex-wrap gap-4 pt-4">
+<button class="flex items-center gap-2 px-6 py-3 rounded-full glass-card border border-white/10 hover:bg-white/5 transition-all duration-300">
+<span class="material-symbols-outlined text-green-400 text-[20px]" data-icon="chat">chat</span>
+<span class="font-label-md text-label-md">WhatsApp</span>
+</button>
+<button class="flex items-center gap-2 px-6 py-3 rounded-full glass-card border border-white/10 hover:bg-white/5 transition-all duration-300">
+<span class="material-symbols-outlined text-primary text-[20px]" data-icon="alternate_email">alternate_email</span>
+<span class="font-label-md text-label-md">Direct Email</span>
+</button>
+</div>
+</div>
+<!-- Right: Contact Form -->
+<div class="lg:col-span-7">
+<div class="glass-card p-8 md:p-12 rounded-lg border border-white/10 relative overflow-hidden">
+<!-- Internal noise texture simulated via CSS -->
+<div class="absolute inset-0 opacity-[0.03] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/stardust.png')]"></div>
+<form class="space-y-8 relative z-10">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="space-y-2">
+<label class="font-label-md text-label-md text-on-surface-variant ml-1">Full Name</label>
+<input class="w-full bg-white/5 border border-white/10 rounded-full px-6 py-4 font-body-md text-on-surface placeholder:text-outline/50 transition-all duration-300" placeholder="John Doe" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="font-label-md text-label-md text-on-surface-variant ml-1">Company</label>
+<input class="w-full bg-white/5 border border-white/10 rounded-full px-6 py-4 font-body-md text-on-surface placeholder:text-outline/50 transition-all duration-300" placeholder="Helix Systems" type="text"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="font-label-md text-label-md text-on-surface-variant ml-1">Work Email</label>
+<input class="w-full bg-white/5 border border-white/10 rounded-full px-6 py-4 font-body-md text-on-surface placeholder:text-outline/50 transition-all duration-300" placeholder="john@company.com" type="email"/>
+</div>
+<div class="space-y-2">
+<label class="font-label-md text-label-md text-on-surface-variant ml-1">Project Details</label>
+<textarea class="w-full bg-white/5 border border-white/10 rounded-xl px-6 py-4 font-body-md text-on-surface placeholder:text-outline/50 transition-all duration-300 resize-none" placeholder="Tell us about your vision..." rows="5"></textarea>
+</div>
+<div class="flex items-center justify-between gap-6 pt-4">
+<div class="hidden md:block">
+<p class="font-label-sm text-label-sm text-outline max-w-[200px]">By clicking send, you agree to our privacy protocols.</p>
+</div>
+<button class="magnetic-btn w-full md:w-auto bg-primary text-on-primary-container px-12 py-5 rounded-full font-label-md text-label-md font-bold shadow-xl shadow-primary/20 flex items-center justify-center gap-3 hover:shadow-primary/40 transition-all duration-500" type="submit">
+                                Send Inquiry
+                                <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</form>
+</div>
+<!-- Subtle Map Integration via Image -->
+<div class="mt-8 rounded-lg overflow-hidden glass-card border border-white/10 h-48 group">
+<img alt="Location Map" class="w-full h-full object-cover grayscale opacity-40 group-hover:grayscale-0 group-hover:opacity-60 transition-all duration-700" data-alt="A stylized minimalist digital map of a futuristic city grid at night. The map features deep charcoal and obsidian surfaces with thin glowing violet and indigo lines representing infrastructure and data pathways. The lighting is low-key and atmospheric, suggesting a high-tech command center aesthetic with clean, technical precision and cinematic depth." data-location="Mumbai" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2xmDZezhHqMRSAPfVe0KfzdoL_lhjt1ULlLzNQLS9UNU3j5UFDYxj8_OKEmg4r9zCX4EOP4RGvMB0aut3UVoHSiRfzhAOLm7YdEjCy4NLIFa2DIagZqYrJZlRMXAQ8Z0A3Pc2dlEig-2_6TbTKjpDZeuW782D8qcjC5FrEldqH3JVarRs197lmqi9UYMl43Z8sbo-QQPU4ayI4eDlI1t4RpMPvcKMr2F4YUifcOeL1V1i_DvH7HlfIkT9c-XRpRlmM9qsdCWTM1Js"/>
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+<div class="px-4 py-2 bg-background/80 backdrop-blur-md rounded-full border border-primary/30 flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-primary animate-pulse"></div>
+<span class="font-label-sm text-label-sm text-on-surface">HQ: Mumbai, India</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full rounded-t-xl bg-surface-container-lowest border-t border-outline-variant/20">
+<div class="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop py-24 flex flex-col md:flex-row justify-between gap-16">
+<div class="space-y-8">
+<span class="font-display-2xl text-display-2xl tracking-tighter text-on-surface">HELIX</span>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-sm opacity-60">
+                    Pioneering the next generation of digital infrastructure through cinematic design and technical excellence.
+                </p>
+<div class="flex gap-6">
+<span class="material-symbols-outlined text-outline hover:text-primary cursor-pointer transition-colors" data-icon="public">public</span>
+<span class="material-symbols-outlined text-outline hover:text-primary cursor-pointer transition-colors" data-icon="terminal">terminal</span>
+<span class="material-symbols-outlined text-outline hover:text-primary cursor-pointer transition-colors" data-icon="hub">hub</span>
+</div>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-x-12 gap-y-16">
+<div class="space-y-6">
+<h4 class="font-label-md text-label-md text-primary uppercase">Platform</h4>
+<ul class="space-y-4">
+<li><a class="font-label-sm text-label-sm text-on-surface-variant opacity-60 hover:opacity-100 hover:text-primary transition-all" href="#">Home</a></li>
+<li><a class="font-label-sm text-label-sm text-on-surface-variant opacity-60 hover:opacity-100 hover:text-primary transition-all" href="#">Services</a></li>
+<li><a class="font-label-sm text-label-sm text-on-surface-variant opacity-60 hover:opacity-100 hover:text-primary transition-all" href="#">Projects</a></li>
+</ul>
+</div>
+<div class="space-y-6">
+<h4 class="font-label-md text-label-md text-primary uppercase">Company</h4>
+<ul class="space-y-4">
+<li><a class="font-label-sm text-label-sm text-on-surface-variant opacity-60 hover:opacity-100 hover:text-primary transition-all" href="#">About</a></li>
+<li><a class="font-label-sm text-label-sm text-on-surface-variant opacity-60 hover:opacity-100 hover:text-primary transition-all" href="#">Contact</a></li>
+<li><a class="font-label-sm text-label-sm text-on-surface-variant opacity-60 hover:opacity-100 hover:text-primary transition-all" href="#">Careers</a></li>
+</ul>
+</div>
+<div class="space-y-6">
+<h4 class="font-label-md text-label-md text-primary uppercase">Social</h4>
+<ul class="space-y-4">
+<li><a class="font-label-sm text-label-sm text-on-surface-variant opacity-60 hover:opacity-100 hover:text-primary transition-all" href="#">Instagram</a></li>
+<li><a class="font-label-sm text-label-sm text-on-surface-variant opacity-60 hover:opacity-100 hover:text-primary transition-all" href="#">X (Twitter)</a></li>
+<li><a class="font-label-sm text-label-sm text-on-surface-variant opacity-60 hover:opacity-100 hover:text-primary transition-all" href="#">GitHub</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop py-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
+<span class="font-label-sm text-label-sm text-outline opacity-40">© 2024 HELIX SYSTEMS. ALL RIGHTS RESERVED.</span>
+<div class="flex gap-8">
+<a class="font-label-sm text-label-sm text-outline opacity-40 hover:opacity-100" href="#">Privacy Policy</a>
+<a class="font-label-sm text-label-sm text-outline opacity-40 hover:opacity-100" href="#">Terms of Service</a>
+</div>
+</div>
+</footer>
+<script>
+        // Magnetic button micro-interaction
+        document.querySelectorAll('.magnetic-btn').forEach(btn => {
+            btn.addEventListener('mousemove', (e) => {
+                const rect = btn.getBoundingClientRect();
+                const x = e.clientX - rect.left - rect.width / 2;
+                const y = e.clientY - rect.top - rect.height / 2;
+                btn.style.transform = `translate(${x * 0.15}px, ${y * 0.15}px) scale(1.02)`;
+            });
+            btn.addEventListener('mouseleave', () => {
+                btn.style.transform = `translate(0, 0) scale(1)`;
+            });
+        });
+
+        // Form submission micro-interaction
+        const form = document.querySelector('form');
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const btn = form.querySelector('button[type="submit"]');
+            const originalText = btn.innerHTML;
+            btn.innerHTML = '<span class="material-symbols-outlined animate-spin" data-icon="sync">sync</span> Sending...';
+            btn.classList.add('opacity-80', 'pointer-events-none');
+            
+            setTimeout(() => {
+                btn.innerHTML = '<span class="material-symbols-outlined" data-icon="check">check</span> Message Sent';
+                btn.classList.replace('bg-primary', 'bg-green-500');
+                btn.classList.replace('text-on-primary-container', 'text-white');
+                form.reset();
+                
+                setTimeout(() => {
+                    btn.innerHTML = originalText;
+                    btn.classList.replace('bg-green-500', 'bg-primary');
+                    btn.classList.replace('text-white', 'text-on-primary-container');
+                    btn.classList.remove('opacity-80', 'pointer-events-none');
+                }, 3000);
+            }, 2000);
+        });
+    </script>
+</body></html>

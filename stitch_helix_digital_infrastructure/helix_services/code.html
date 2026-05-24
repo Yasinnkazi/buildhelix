@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>HELIX | Services</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Chivo:wght@600;700&amp;family=Inter:wght@400&amp;family=Geist:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>.material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24
+    }
+body {
+    background-color: #121414;
+    color: #e2e2e2;
+    overflow-x: hidden
+    }
+.glass-panel {
+    backdrop-filter: blur(24px);
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1)
+    }
+.service-card:hover .glass-panel {
+    background: rgba(255, 255, 255, 0.07);
+    border-color: rgba(208, 188, 255, 0.3);
+    transform: translatey(-8px)
+    }
+.glow-effect {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(109, 59, 215, 0.15) 0%, rgba(109, 59, 215, 0) 70%);
+    pointer-events: none;
+    z-index: 0
+    }
+.noise-overlay {
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuAoc2Q5YXpFW1PjHSx8yCGTa--1vvANOzW_0Ji34I5pFiyfgToeUhs3MTkU9xb2mNfJZbzjulaVYsGZFAsZwYkIjYAPKKtCnO5hCW2__FHUeesgUkq_nN3L_25sP0V5OnCDdUBakKraVb6EVAcWf0ranFRiMe_D-4iUMS6h7BCrduEzQ5iKxpd0aTQBcIPpqm1vB1vYoy4Uz7ZEcd63Em8_0rYBqyBFWmwumJhh5mrSG5NmtjIHa-hWibR3cxKVkyXBEIRl6APttYA6);
+    opacity: 0.03;
+    pointer-events: none
+    }</style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed": "#e9ddff",
+                        "surface-dim": "#121414",
+                        "primary-container": "#a078ff",
+                        "on-primary-fixed": "#23005c",
+                        "on-tertiary": "#283044",
+                        "secondary-fixed": "#d8e2ff",
+                        "surface-variant": "#333535",
+                        "error-container": "#93000a",
+                        "on-tertiary-container": "#22293d",
+                        "primary-fixed-dim": "#d0bcff",
+                        "surface-tint": "#d0bcff",
+                        "secondary-fixed-dim": "#adc6ff",
+                        "outline": "#958ea0",
+                        "on-primary-container": "#340080",
+                        "on-secondary": "#002e6a",
+                        "background": "#121414",
+                        "surface-container-low": "#1a1c1c",
+                        "tertiary-fixed-dim": "#bec6e0",
+                        "surface": "#121414",
+                        "on-surface": "#e2e2e2",
+                        "surface-container-high": "#282a2b",
+                        "on-background": "#e2e2e2",
+                        "on-secondary-fixed-variant": "#004395",
+                        "inverse-primary": "#6d3bd7",
+                        "tertiary": "#bec6e0",
+                        "on-error": "#690005",
+                        "on-primary": "#3c0091",
+                        "secondary-container": "#0566d9",
+                        "surface-container-highest": "#333535",
+                        "on-tertiary-fixed-variant": "#3f465c",
+                        "surface-container": "#1e2020",
+                        "inverse-on-surface": "#2f3131",
+                        "on-tertiary-fixed": "#131b2e",
+                        "on-surface-variant": "#cbc3d7",
+                        "on-secondary-container": "#e6ecff",
+                        "primary": "#d0bcff",
+                        "on-primary-fixed-variant": "#5516be",
+                        "outline-variant": "#494454",
+                        "on-secondary-fixed": "#001a42",
+                        "inverse-surface": "#e2e2e2",
+                        "tertiary-container": "#8990a8",
+                        "error": "#ffb4ab",
+                        "surface-container-lowest": "#0c0f0f",
+                        "on-error-container": "#ffdad6",
+                        "secondary": "#adc6ff",
+                        "tertiary-fixed": "#dae2fd",
+                        "surface-bright": "#38393a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-max": "1440px",
+                        "gutter": "24px",
+                        "margin-desktop": "64px",
+                        "margin-mobile": "20px",
+                        "unit": "8px"
+                    },
+                    "fontFamily": {
+                        "label-md": ["Geist"],
+                        "label-sm": ["Geist"],
+                        "headline-lg": ["Chivo"],
+                        "headline-lg-mobile": ["Chivo"],
+                        "display-2xl": ["Chivo"],
+                        "body-md": ["Inter"],
+                        "display-lg": ["Chivo"],
+                        "body-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "500"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "display-2xl": ["72px", {"lineHeight": "80px", "letterSpacing": "-0.04em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.03em", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="antialiased selection:bg-primary-container selection:text-on-primary-container">
+<div class="noise-overlay fixed inset-0 z-[100]"></div>
+<!-- TopAppBar -->
+<header class="fixed top-4 left-1/2 -translate-x-1/2 w-[90%] max-w-7xl rounded-full bg-surface/10 dark:bg-surface-dim/10 backdrop-blur-xl border border-white/10 dark:border-white/5 backdrop-saturate-150 shadow-2xl flex justify-between items-center px-8 py-3 z-50">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary dark:text-primary-fixed text-3xl" data-icon="blur_on">blur_on</span>
+<span class="font-headline-lg text-headline-lg tracking-tighter text-on-surface dark:text-on-surface-variant">HELIX</span>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-outline-variant hover:text-on-surface dark:hover:text-on-surface hover:scale-105 transition-all duration-300" href="#">Home</a>
+<a class="font-label-md text-label-md text-primary dark:text-primary-fixed border-b border-primary/50 hover:scale-105 transition-all duration-300" href="#">Services</a>
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-outline-variant hover:text-on-surface dark:hover:text-on-surface hover:scale-105 transition-all duration-300" href="#">Projects</a>
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-outline-variant hover:text-on-surface dark:hover:text-on-surface hover:scale-105 transition-all duration-300" href="#">About</a>
+</nav>
+<button class="bg-primary text-on-primary-container px-6 py-2 rounded-full font-label-md text-label-md hover:scale-105 hover:bg-white/5 transition-all duration-300 active:scale-95">
+            Book a Call
+        </button>
+</header>
+<main class="relative pt-40 pb-24">
+<!-- Hero Section -->
+<section class="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop mb-24">
+<div class="max-w-3xl">
+<span class="inline-block px-4 py-1 rounded-full border border-primary/30 text-primary font-label-sm text-label-sm mb-6 uppercase tracking-widest">Core Capabilities</span>
+<h1 class="font-display-lg text-display-lg md:font-display-2xl md:text-display-2xl mb-8 leading-tight">High-Performance <br/><span class="text-primary-fixed-dim">Digital Architecture.</span></h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">We engineer cinematic digital experiences that blend technical precision with high-end editorial aesthetics. Explore our technical ecosystem.</p>
+</div>
+</section>
+<!-- Cinematic Service Panels -->
+<section class="flex flex-col gap-8 px-margin-mobile md:px-margin-desktop max-w-7xl mx-auto">
+<!-- 01 Website Development -->
+<div class="service-card relative group cursor-pointer">
+<div class="glass-panel p-8 md:p-12 rounded-lg flex flex-col md:flex-row items-center gap-12 overflow-hidden">
+<div class="absolute top-0 right-0 p-8 text-outline-variant font-display-lg opacity-20">01</div>
+<div class="w-full md:w-1/2 z-10">
+<span class="text-primary font-label-sm text-label-sm tracking-widest uppercase mb-4 block">Development</span>
+<h2 class="font-headline-lg text-headline-lg mb-6">Website Development</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8 leading-relaxed">Modern, performance-first architectures designed for the next generation of web. We leverage headless CMS, edge computing, and fluid animations to create digital landmarks.</p>
+<div class="flex flex-wrap gap-3">
+<span class="px-4 py-1 rounded-full bg-white/5 border border-white/10 font-label-sm text-label-sm">React/Next.js</span>
+<span class="px-4 py-1 rounded-full bg-white/5 border border-white/10 font-label-sm text-label-sm">Three.js</span>
+<span class="px-4 py-1 rounded-full bg-white/5 border border-white/10 font-label-sm text-label-sm">Performance First</span>
+</div>
+</div>
+<div class="w-full md:w-1/2 relative h-64 md:h-[400px] rounded-lg overflow-hidden border border-white/5">
+<img alt="Web architecture" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-110 group-hover:scale-100" data-alt="A highly sophisticated, cinematic 3D visualization of a complex web architecture grid. Glowing violet lines connect floating translucent panels representing data nodes. The lighting is moody and dark, reflecting a high-end tech aesthetic with deep shadows and vibrant purple highlights. The atmosphere is futuristic, sharp, and meticulously detailed, suggesting high performance." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCWocGdjcBKVZ-6-f_hqHA49PPm-TDtNaqOartnmKBlal10fPrOsm6OC2ET-a2ONMJL2Tfmp3c3tz0LeKMgy7Q5xjNyER3hiDPeb27JJcVx5GMGp53bLa3kucDSh_joP309DXSnKFgA4QCfiswcvhVF46okAV3oaWgHfLufVIW9efIG1Hr8Bn12ng41zf-no5XMyMtiUeaV3DN6bbG9Rzq2JZYqGEHKSlgLRI5_56LzBLLMFtvPi-o-RzcoOYDjWuFaqHqTgMaYlHqu"/>
+</div>
+</div>
+</div>
+<!-- 02 GMB Optimization -->
+<div class="service-card relative group cursor-pointer">
+<div class="glass-panel p-8 md:p-12 rounded-lg flex flex-col md:flex-row-reverse items-center gap-12 overflow-hidden">
+<div class="absolute top-0 left-0 p-8 text-outline-variant font-display-lg opacity-20">02</div>
+<div class="w-full md:w-1/2 z-10">
+<span class="text-primary font-label-sm text-label-sm tracking-widest uppercase mb-4 block">SEO &amp; Local</span>
+<h2 class="font-headline-lg text-headline-lg mb-6">GMB Optimization</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8 leading-relaxed">Strategic local dominance through surgical optimization. We ensure your business is the primary authority in your geographic ecosystem, driving high-intent traffic.</p>
+<div class="flex flex-wrap gap-3">
+<span class="px-4 py-1 rounded-full bg-white/5 border border-white/10 font-label-sm text-label-sm">Local Search</span>
+<span class="px-4 py-1 rounded-full bg-white/5 border border-white/10 font-label-sm text-label-sm">Ranking Signals</span>
+<span class="px-4 py-1 rounded-full bg-white/5 border border-white/10 font-label-sm text-label-sm">Presence</span>
+</div>
+</div>
+<div class="w-full md:w-1/2 relative h-64 md:h-[400px] rounded-lg overflow-hidden border border-white/5">
+<img alt="Digital strategy" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-110 group-hover:scale-100" data-alt="A minimalist, top-down view of a futuristic city map rendered in glowing blue neon lines on a deep black background. Strategic location pins are highlighted with intense violet pulses, symbolizing local market dominance. The visual style is crisp, mathematical, and cinematic, with soft atmospheric fog and ultra-thin grid lines creating a sense of precision and scale." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLk9hFbLPW6f5CVNE5y77j3L2yCXdm5bvHrTitCJqHYwTSRg102BH1c3gqkfYsTERBF35MLPBuxU6MRttVDG0zR7GesV1sg_RaAFFG6ki4wc9U9NPYq697ZqxSBhJiQa7zMyWDJNf25kKx2d5AIm7WQbo0ZFaORBDXIKtk490daqVHlEs_-aQlMoMF1NkfMmMvBfrgWN62is0Qn8v_3VKHsKdXKd2Xe4TESLpHwyQNbC04DiTLfsowKNZr-apVWrl0lK8CcUV63EzF"/>
+</div>
+</div>
+</div>
+<!-- 03 Automation Systems -->
+<div class="service-card relative group cursor-pointer">
+<div class="glass-panel p-8 md:p-12 rounded-lg flex flex-col md:flex-row items-center gap-12 overflow-hidden">
+<div class="absolute top-0 right-0 p-8 text-outline-variant font-display-lg opacity-20">03</div>
+<div class="w-full md:w-1/2 z-10">
+<span class="text-primary font-label-sm text-label-sm tracking-widest uppercase mb-4 block">AI &amp; Operations</span>
+<h2 class="font-headline-lg text-headline-lg mb-6">Automation Systems</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8 leading-relaxed">Intelligent business workflows that eliminate friction. We design autonomous systems that handle complex operations while you focus on scaling.</p>
+<div class="flex flex-wrap gap-3">
+<span class="px-4 py-1 rounded-full bg-white/5 border border-white/10 font-label-sm text-label-sm">Workflow Logic</span>
+<span class="px-4 py-1 rounded-full bg-white/5 border border-white/10 font-label-sm text-label-sm">API Integrations</span>
+<span class="px-4 py-1 rounded-full bg-white/5 border border-white/10 font-label-sm text-label-sm">Efficiency</span>
+</div>
+</div>
+<div class="w-full md:w-1/2 relative h-64 md:h-[400px] rounded-lg overflow-hidden border border-white/5">
+<img alt="Automation" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-110 group-hover:scale-100" data-alt="A cinematic close-up of a high-tech robotic interface with intricate mechanical parts and glowing internal components. Soft violet light spills from the joints, illuminating a sleek graphite-colored frame. The setting is dark and atmospheric, with a shallow depth of field focusing on the technical complexity and precision of the machine. The image conveys intelligent efficiency and advanced automation." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCElylEyULpdkgp6-E9j3i6xHuuGg3pfcXznEH22fjK8iy8NFhZ35l6poRdpFjEfRrMRo4EBm6bPwwtgtROGgbequ2w5MKf4us9yFkEI2TtjKf1u95ZfL2COjm5CNEoCjsZX8M5zHY2kNrUajGfMz1GqXPtAe12IQgbVAo8HnHn_dmzsYJo7MoCIAc--2uqT2TjBZqwsrkPF7Vk6K7XXiVR1POwyaxUuPniAEfrAhgCtvfUtF8MBJiFm4W6cxMR0PJ8BiGRTCWy0xXh"/>
+</div>
+</div>
+</div>
+<!-- 04 Branding -->
+<div class="service-card relative group cursor-pointer">
+<div class="glass-panel p-8 md:p-12 rounded-lg flex flex-col md:flex-row-reverse items-center gap-12 overflow-hidden">
+<div class="absolute top-0 left-0 p-8 text-outline-variant font-display-lg opacity-20">04</div>
+<div class="w-full md:w-1/2 z-10">
+<span class="text-primary font-label-sm text-label-sm tracking-widest uppercase mb-4 block">Identity</span>
+<h2 class="font-headline-lg text-headline-lg mb-6">Branding</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8 leading-relaxed">Digital-first identity systems built for high-end perception. We craft the visual and emotional DNA of your brand to ensure absolute authority in your market.</p>
+<div class="flex flex-wrap gap-3">
+<span class="px-4 py-1 rounded-full bg-white/5 border border-white/10 font-label-sm text-label-sm">Visual DNA</span>
+<span class="px-4 py-1 rounded-full bg-white/5 border border-white/10 font-label-sm text-label-sm">Typography</span>
+<span class="px-4 py-1 rounded-full bg-white/5 border border-white/10 font-label-sm text-label-sm">Premium Design</span>
+</div>
+</div>
+<div class="w-full md:w-1/2 relative h-64 md:h-[400px] rounded-lg overflow-hidden border border-white/5">
+<img alt="Branding art" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-110 group-hover:scale-100" data-alt="An abstract, editorial-style digital art piece exploring texture and form. Flowing liquid glass shapes catch soft ambient light, creating deep shadows and iridescent violet highlights. The composition is elegant and minimalist, representing the fluid nature of brand identity. The background is a matte dark graphite, emphasizing the premium quality and artistic precision of the visual system." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3HyuCoWmVhFy3080Qi1rhYHF2xqEhn7vEM02XbJ_U9e50Mh0esM1sF60ePeGMuXgrYK3guAfs-lC79NCAG6PEZtJFOOpZ9Wg8Ti28YcKBiFvvmsDmJWRy6NyzxnQukdzkp3GWbvgc9KlCnfQSzzd1ZLYTBNMzIqM9Pllup7buH1KCF4dgfSRqqCe1202PXzNJWvd9blpw6c4OrzaziYqzWWI7RORuqwR2d91ps6vA4Hn09nd7plAmZ6y7YQZMwTiKp8S0CsfrUDvC"/>
+</div>
+</div>
+</div>
+<!-- 05 Digital Infrastructure -->
+<div class="service-card relative group cursor-pointer">
+<div class="glass-panel p-8 md:p-12 rounded-lg flex flex-col md:flex-row items-center gap-12 overflow-hidden">
+<div class="absolute top-0 right-0 p-8 text-outline-variant font-display-lg opacity-20">05</div>
+<div class="w-full md:w-1/2 z-10">
+<span class="text-primary font-label-sm text-label-sm tracking-widest uppercase mb-4 block">Backend</span>
+<h2 class="font-headline-lg text-headline-lg mb-6">Digital Infrastructure</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8 leading-relaxed">Scalable backend ecosystems that support global growth. We build the secure, resilient foundations that power modern digital enterprises.</p>
+<div class="flex flex-wrap gap-3">
+<span class="px-4 py-1 rounded-full bg-white/5 border border-white/10 font-label-sm text-label-sm">Cloud Systems</span>
+<span class="px-4 py-1 rounded-full bg-white/5 border border-white/10 font-label-sm text-label-sm">Database Ops</span>
+<span class="px-4 py-1 rounded-full bg-white/5 border border-white/10 font-label-sm text-label-sm">Elastic Scale</span>
+</div>
+</div>
+<div class="w-full md:w-1/2 relative h-64 md:h-[400px] rounded-lg overflow-hidden border border-white/5">
+<img alt="Infrastructure" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-110 group-hover:scale-100" data-alt="A deep, atmospheric shot of a high-end data center corridor. Rows of server racks glow with subtle blue and violet status lights, casting long shadows on a polished dark floor. The lighting is low-key and dramatic, suggesting a secure and powerful digital infrastructure. The focus is sharp on the technical detail of the hardware, conveying reliability and massive computing scale." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQzwO7VtsdmAgFrnis40gxZpdIE2On0DD8BOOFlgq8m9H1m68JF0OQFIonmZtJXdpxtYdix9M_7URmy1BV2Ub6IBVjTlCJfG0fM5plE714mvMk_U4wrIflNdWrb1P9aW17Fs53_Pc58hJFxyH5n7cWQrmshSCfJokJZnufANuNp3BZOOKAG3G5j_nUZBEcDcU6raSHcz35WIC8rJAGNsrhx-3ZLsir-0QGXFfU6TpK3-cLOeeOPkcTje2trFyulz9b3NyZKQlFsAKY"/>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="mt-32 px-margin-mobile md:px-margin-desktop max-w-7xl mx-auto text-center">
+<div class="glass-panel py-20 px-8 rounded-lg border border-primary/20 bg-primary/5 relative overflow-hidden">
+<div class="glow-effect -top-24 -left-24"></div>
+<div class="glow-effect -bottom-24 -right-24"></div>
+<h3 class="font-display-lg text-display-lg mb-6">Ready to upgrade your system?</h3>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-2xl mx-auto">Join the ranks of high-performance digital entities leveraging HELIX systems.</p>
+<div class="flex flex-col md:flex-row gap-4 justify-center">
+<button class="bg-primary text-on-primary-container px-10 py-4 rounded-full font-label-md text-label-md hover:scale-105 transition-all">Start Project</button>
+<button class="border border-white/10 bg-white/5 text-on-surface px-10 py-4 rounded-full font-label-md text-label-md hover:bg-white/10 transition-all">View Our Work</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full rounded-t-xl bg-surface-container-lowest dark:bg-surface-dim border-t border-outline-variant/20">
+<div class="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop py-24 flex flex-col md:flex-row justify-between gap-16">
+<div class="flex flex-col gap-8 max-w-sm">
+<span class="font-display-2xl text-display-2xl tracking-tighter text-on-surface dark:text-on-surface">HELIX</span>
+<p class="font-body-md text-body-md text-on-surface-variant dark:text-outline opacity-60">Engineers of cinematic digital experiences and high-performance technical ecosystems.</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-12">
+<div class="flex flex-col gap-4">
+<h4 class="font-label-sm text-label-sm text-primary uppercase tracking-widest">Navigation</h4>
+<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-outline opacity-60 hover:opacity-100 hover:text-primary transition-all duration-500" href="#">Home</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-outline opacity-60 hover:opacity-100 hover:text-primary transition-all duration-500" href="#">Services</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-outline opacity-60 hover:opacity-100 hover:text-primary transition-all duration-500" href="#">Projects</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-outline opacity-60 hover:opacity-100 hover:text-primary transition-all duration-500" href="#">About</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-outline opacity-60 hover:opacity-100 hover:text-primary transition-all duration-500" href="#">Contact</a>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-label-sm text-label-sm text-primary uppercase tracking-widest">Social</h4>
+<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-outline opacity-60 hover:opacity-100 hover:text-primary transition-all duration-500" href="#">Instagram</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-outline opacity-60 hover:opacity-100 hover:text-primary transition-all duration-500" href="#">X (Twitter)</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-outline opacity-60 hover:opacity-100 hover:text-primary transition-all duration-500" href="#">GitHub</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-outline opacity-60 hover:opacity-100 hover:text-primary transition-all duration-500" href="#">LinkedIn</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-outline opacity-60 hover:opacity-100 hover:text-primary transition-all duration-500" href="#">Discord</a>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-label-sm text-label-sm text-primary uppercase tracking-widest">Contact</h4>
+<p class="font-label-sm text-label-sm text-on-surface-variant opacity-60">buildhelix@gmail.com</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant opacity-60">+91 90045 56455</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant opacity-60">+91 93242 84726</p>
+</div>
+</div>
+</div>
+<div class="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop py-8 border-t border-outline-variant/10 flex justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant dark:text-outline opacity-40">© 2024 HELIX SYSTEMS. ALL RIGHTS RESERVED.</span>
+</div>
+</footer>
+<script>
+        // Smooth hover glow tracking for cards
+        document.querySelectorAll('.service-card').forEach(card => {
+            card.addEventListener('mousemove', e => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                
+                // Add a dynamic glow that follows the mouse
+                const glow = card.querySelector('.glow-effect');
+                if (!glow) {
+                    const newGlow = document.createElement('div');
+                    newGlow.className = 'glow-effect';
+                    card.appendChild(newGlow);
+                }
+                
+                const currentGlow = card.querySelector('.glow-effect');
+                currentGlow.style.left = `${x - 150}px`;
+                currentGlow.style.top = `${y - 150}px`;
+                currentGlow.style.opacity = '1';
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                const glow = card.querySelector('.glow-effect');
+                if (glow) glow.style.opacity = '0';
+            });
+        });
+
+        // Simple scroll reveal
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-20');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.service-card').forEach(card => {
+            card.classList.add('opacity-0', 'translate-y-20', 'transition-all', 'duration-1000');
+            observer.observe(card);
+        });
+    </script>
+</body></html>

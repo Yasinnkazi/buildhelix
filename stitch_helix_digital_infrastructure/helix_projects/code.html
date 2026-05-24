@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>HELIX | Projects</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Chivo:wght@400;600;700&amp;family=Inter:wght@400;500&amp;family=Geist:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary-fixed": "#e9ddff",
+                    "surface-dim": "#121414",
+                    "primary-container": "#a078ff",
+                    "on-primary-fixed": "#23005c",
+                    "on-tertiary": "#283044",
+                    "secondary-fixed": "#d8e2ff",
+                    "surface-variant": "#333535",
+                    "error-container": "#93000a",
+                    "on-tertiary-container": "#22293d",
+                    "primary-fixed-dim": "#d0bcff",
+                    "surface-tint": "#d0bcff",
+                    "secondary-fixed-dim": "#adc6ff",
+                    "outline": "#958ea0",
+                    "on-primary-container": "#340080",
+                    "on-secondary": "#002e6a",
+                    "background": "#121414",
+                    "surface-container-low": "#1a1c1c",
+                    "tertiary-fixed-dim": "#bec6e0",
+                    "surface": "#121414",
+                    "on-surface": "#e2e2e2",
+                    "surface-container-high": "#282a2b",
+                    "on-background": "#e2e2e2",
+                    "on-secondary-fixed-variant": "#004395",
+                    "inverse-primary": "#6d3bd7",
+                    "tertiary": "#bec6e0",
+                    "on-error": "#690005",
+                    "on-primary": "#3c0091",
+                    "secondary-container": "#0566d9",
+                    "surface-container-highest": "#333535",
+                    "on-tertiary-fixed-variant": "#3f465c",
+                    "surface-container": "#1e2020",
+                    "inverse-on-surface": "#2f3131",
+                    "on-tertiary-fixed": "#131b2e",
+                    "on-surface-variant": "#cbc3d7",
+                    "on-secondary-container": "#e6ecff",
+                    "primary": "#d0bcff",
+                    "on-primary-fixed-variant": "#5516be",
+                    "outline-variant": "#494454",
+                    "on-secondary-fixed": "#001a42",
+                    "inverse-surface": "#e2e2e2",
+                    "tertiary-container": "#8990a8",
+                    "error": "#ffb4ab",
+                    "surface-container-lowest": "#0c0f0f",
+                    "on-error-container": "#ffdad6",
+                    "secondary": "#adc6ff",
+                    "tertiary-fixed": "#dae2fd",
+                    "surface-bright": "#38393a"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "container-max": "1440px",
+                    "gutter": "24px",
+                    "margin-desktop": "64px",
+                    "margin-mobile": "20px",
+                    "unit": "8px"
+            },
+            "fontFamily": {
+                    "label-md": ["Geist"],
+                    "label-sm": ["Geist"],
+                    "headline-lg": ["Chivo"],
+                    "headline-lg-mobile": ["Chivo"],
+                    "display-2xl": ["Chivo"],
+                    "body-md": ["Inter"],
+                    "display-lg": ["Chivo"],
+                    "body-lg": ["Inter"]
+            },
+            "fontSize": {
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "500"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "display-2xl": ["72px", {"lineHeight": "80px", "letterSpacing": "-0.04em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.03em", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #0A0A0A;
+            color: #e2e2e2;
+            overflow-x: hidden;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .project-card {
+            transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: transform, opacity;
+        }
+        .mesh-gradient {
+            background: radial-gradient(at 0% 0%, rgba(109, 59, 215, 0.15) 0%, transparent 50%),
+                        radial-gradient(at 100% 100%, rgba(5, 102, 217, 0.1) 0%, transparent 50%);
+        }
+        .magnetic-btn:hover {
+            transform: scale(1.05);
+            background: rgba(255, 255, 255, 0.08);
+        }
+        .sticky-wrapper {
+            position: relative;
+            padding-bottom: 20vh;
+        }
+        .scroll-section {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: sticky;
+            top: 0;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="dark font-body-md text-body-md antialiased mesh-gradient">
+<!-- TopAppBar -->
+<header class="fixed top-4 left-1/2 -translate-x-1/2 w-[90%] max-w-7xl rounded-full bg-surface/10 dark:bg-surface-dim/10 backdrop-blur-xl border border-white/10 dark:border-white/5 backdrop-saturate-150 shadow-2xl flex justify-between items-center px-8 py-3 z-50 transition-all duration-300">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary dark:text-primary-fixed text-3xl" data-icon="blur_on">blur_on</span>
+<span class="font-headline-lg text-headline-lg tracking-tighter text-on-surface dark:text-on-surface-variant">HELIX</span>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-outline-variant hover:text-on-surface dark:hover:text-on-surface hover:scale-105 transition-all duration-300" href="#">Home</a>
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-outline-variant hover:text-on-surface dark:hover:text-on-surface hover:scale-105 transition-all duration-300" href="#">Services</a>
+<a class="font-label-md text-label-md text-primary dark:text-primary-fixed border-b border-primary/50 hover:scale-105 transition-all duration-300" href="#">Projects</a>
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-outline-variant hover:text-on-surface dark:hover:text-on-surface hover:scale-105 transition-all duration-300" href="#">About</a>
+</nav>
+<button class="bg-primary-container hover:bg-primary text-on-primary-container px-6 py-2 rounded-full font-label-md text-label-md hover:scale-105 transition-all duration-300 active:scale-95">
+            Book a Call
+        </button>
+</header>
+<main class="relative">
+<!-- Hero Intro Section -->
+<section class="min-height-[530px] flex flex-col justify-end px-margin-mobile md:px-margin-desktop pt-48 pb-24 max-w-7xl mx-auto">
+<div class="space-y-6">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-[0.2em] block">Case Studies</span>
+<h1 class="font-display-lg text-display-lg md:font-display-2xl md:text-display-2xl tracking-tighter leading-tight max-w-4xl">
+                    Selected <br/> Architectural <br/> Narratives
+                </h1>
+</div>
+</section>
+<!-- Sticky Project Showcase -->
+<div class="sticky-wrapper max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop">
+<!-- Project Card 1 -->
+<section class="scroll-section">
+<div class="project-card glass-panel w-full h-[618px] md:h-[707px] rounded-xl overflow-hidden relative group">
+<img class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-110 transition-transform duration-[2000ms] ease-out" data-alt="A futuristic minimalist interface design featuring deep violet mesh gradients and sharp technical typography. The lighting is moody and cinematic, with soft glows emanating from glassmorphic panels against a pure black background. The overall aesthetic is ultra-high-end and sophisticated, reflecting a professional architectural digital experience." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-gZtmb8jwf8hIQQOJQjERvT9-UwlXIAKqA-dtcdggDnLi37c6VB69S30hX4W5_9rdggyshsVVeqKURvL4NoVq8YZXhCPlGpYcZ2YfKtTCi1cokDYxIEH2ZjOzahNE3UuyttB61QhFOlWaEUXg-rpT-JaCeyRv3V9KPWvLRFByOWT1orR2fbMlnptIPGuUOf425rruOLEEhtTr6MQNkc9xsUI-L0shDy6xB4qto-BmUSP53lQA0Zj8ecFw5uRsVvvE2DNWadlF2cq_"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent"></div>
+<div class="absolute bottom-0 left-0 w-full p-8 md:p-16 flex flex-col md:flex-row justify-between items-end gap-8">
+<div class="space-y-6 max-w-2xl">
+<div class="flex flex-wrap gap-2">
+<span class="bg-white/10 backdrop-blur-md px-3 py-1 rounded-full text-[10px] font-label-sm text-on-surface uppercase tracking-wider border border-white/5">Visual identity</span>
+<span class="bg-white/10 backdrop-blur-md px-3 py-1 rounded-full text-[10px] font-label-sm text-on-surface uppercase tracking-wider border border-white/5">UX Design</span>
+</div>
+<h2 class="font-display-lg text-display-lg tracking-tight">Project NEBULA</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant/80 max-w-md">Creating a unified digital ecosystem for the next generation of interstellar logistics.</p>
+</div>
+<button class="group/btn flex items-center gap-4 bg-primary-fixed text-on-primary-fixed px-8 py-4 rounded-full font-label-md text-label-md hover:bg-white transition-all duration-500 shadow-xl">
+                            View Case Study
+                            <span class="material-symbols-outlined transition-transform duration-300 group-hover/btn:translate-x-1" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Project Card 2 -->
+<section class="scroll-section">
+<div class="project-card glass-panel w-full h-[618px] md:h-[707px] rounded-xl overflow-hidden relative group">
+<img class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-110 transition-transform duration-[2000ms] ease-out" data-alt="A clean, cinematic top-down view of professional studio equipment including high-end cameras and minimalist design journals on a graphite grey surface. The mood is creative and technically precise, with sharp directional lighting creating long, soft shadows. The visual palette is monochrome with subtle hints of tech-blue light." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6MhDj1gqa4SG5SPL2ds3djHyO18QiTHqcVpo9AaLPSfP3mIA4cCcFWPyYMH-7bMcZArDhH2LRE4H81yMBLx4nWKelrkXDZ09GsM6LOnsDTZsKs4qr0CLXeljILZitxUQqPF-eMEJrZTbUOYEVQCcYeJ5bgFoar_XvB4Mmr-fesh-hLjAyax7z3KCie0dBaXYAH-5d9ucnRAc5EuLjTloPF1mpTR6upoKfq-Uxp8_FKRQJBHGfamqIPI4G3iwO14ckbCzY31f5GFbD"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent"></div>
+<div class="absolute bottom-0 left-0 w-full p-8 md:p-16 flex flex-col md:flex-row justify-between items-end gap-8">
+<div class="space-y-6 max-w-2xl">
+<div class="flex flex-wrap gap-2">
+<span class="bg-white/10 backdrop-blur-md px-3 py-1 rounded-full text-[10px] font-label-sm text-on-surface uppercase tracking-wider border border-white/5">Web Development</span>
+<span class="bg-white/10 backdrop-blur-md px-3 py-1 rounded-full text-[10px] font-label-sm text-on-surface uppercase tracking-wider border border-white/5">3D Motion</span>
+</div>
+<h2 class="font-display-lg text-display-lg tracking-tight">KINETIC Labs</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant/80 max-w-md">Exploring the friction between digital interfaces and physical user interactions.</p>
+</div>
+<button class="group/btn flex items-center gap-4 bg-primary-fixed text-on-primary-fixed px-8 py-4 rounded-full font-label-md text-label-md hover:bg-white transition-all duration-500 shadow-xl">
+                            View Case Study
+                            <span class="material-symbols-outlined transition-transform duration-300 group-hover/btn:translate-x-1" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Project Card 3 -->
+<section class="scroll-section">
+<div class="project-card glass-panel w-full h-[618px] md:h-[707px] rounded-xl overflow-hidden relative group">
+<img class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-110 transition-transform duration-[2000ms] ease-out" data-alt="Abstract digital network visualization with flowing data streams and nodes in vibrant violet and electric blue. The style is cinematic and deep-space inspired, with incredible depth and atmospheric bokeh effects. The background is a dense, dark canvas that makes the bright light trails pop with high contrast." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBg5NEhsrDAyFTQEwAmu2zghI9BBT14LehmGskhWJoP74cHbJOPxYuiJuMsYvE9hDRVV1X1N2aoCWzV_R-gw1A-FoNxRNK_1RAV-eQ6q1Yg3eQroyU3TwzWUTvYvlz9TaZT9vM3yjNXLx1u7XS4DlP8c-xPW9hGwxYcwQ5trO0kpG6fpyhx45kVG8ef8fdWQ9xdMWTJV365jIxB4_FiJFH3wq_6q9Fzxt_nqdxmFSOaCD8oY1zK6scTxpQ6nEF6v0mq3jxtushkpySo"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent"></div>
+<div class="absolute bottom-0 left-0 w-full p-8 md:p-16 flex flex-col md:flex-row justify-between items-end gap-8">
+<div class="space-y-6 max-w-2xl">
+<div class="flex flex-wrap gap-2">
+<span class="bg-white/10 backdrop-blur-md px-3 py-1 rounded-full text-[10px] font-label-sm text-on-surface uppercase tracking-wider border border-white/5">AI Integration</span>
+<span class="bg-white/10 backdrop-blur-md px-3 py-1 rounded-full text-[10px] font-label-sm text-on-surface uppercase tracking-wider border border-white/5">Strategy</span>
+</div>
+<h2 class="font-display-lg text-display-lg tracking-tight">OSIRIS Core</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant/80 max-w-md">An intelligent infrastructure system managing high-density urban environments.</p>
+</div>
+<button class="group/btn flex items-center gap-4 bg-primary-fixed text-on-primary-fixed px-8 py-4 rounded-full font-label-md text-label-md hover:bg-white transition-all duration-500 shadow-xl">
+                            View Case Study
+                            <span class="material-symbols-outlined transition-transform duration-300 group-hover/btn:translate-x-1" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</section>
+</div>
+<!-- Next CTA Section -->
+<section class="py-48 px-margin-mobile md:px-margin-desktop text-center">
+<div class="max-w-4xl mx-auto space-y-12">
+<h2 class="font-display-lg text-display-lg tracking-tighter italic">Ready to build your legacy?</h2>
+<a class="inline-flex items-center gap-6 group" href="#">
+<span class="font-display-2xl text-display-2xl tracking-tighter hover:text-primary transition-colors duration-500">Let's Connect</span>
+<div class="w-24 h-24 rounded-full border border-primary flex items-center justify-center group-hover:bg-primary group-hover:text-on-primary transition-all duration-500">
+<span class="material-symbols-outlined text-4xl" data-icon="north_east">north_east</span>
+</div>
+</a>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full rounded-t-xl bg-surface-container-lowest dark:bg-surface-dim border-t border-outline-variant/20">
+<div class="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop py-24 flex flex-col md:flex-row justify-between gap-16">
+<div class="flex flex-col gap-8 max-w-sm">
+<span class="font-display-2xl text-display-2xl tracking-tighter text-on-surface dark:text-on-surface">HELIX</span>
+<p class="font-body-md text-body-md text-on-surface-variant opacity-60">Building technical precision through architectural cinematic design.</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-12">
+<div class="flex flex-col gap-4">
+<h4 class="font-label-sm text-label-sm text-primary uppercase tracking-widest">Navigation</h4>
+<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-outline opacity-60 hover:opacity-100 hover:text-primary transition-all duration-500" href="#">Home</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-outline opacity-60 hover:opacity-100 hover:text-primary transition-all duration-500" href="#">Services</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-outline opacity-60 hover:opacity-100 hover:text-primary transition-all duration-500" href="#">Projects</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-outline opacity-60 hover:opacity-100 hover:text-primary transition-all duration-500" href="#">About</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-outline opacity-60 hover:opacity-100 hover:text-primary transition-all duration-500" href="#">Contact</a>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-label-sm text-label-sm text-primary uppercase tracking-widest">Social</h4>
+<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-outline opacity-60 hover:opacity-100 hover:text-primary transition-all duration-500" href="#">Instagram</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-outline opacity-60 hover:opacity-100 hover:text-primary transition-all duration-500" href="#">X (Twitter)</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-outline opacity-60 hover:opacity-100 hover:text-primary transition-all duration-500" href="#">LinkedIn</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-outline opacity-60 hover:opacity-100 hover:text-primary transition-all duration-500" href="#">GitHub</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-outline opacity-60 hover:opacity-100 hover:text-primary transition-all duration-500" href="#">Discord</a>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-label-sm text-label-sm text-primary uppercase tracking-widest">Contact</h4>
+<p class="font-label-sm text-label-sm text-on-surface-variant opacity-60">buildhelix@gmail.com</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant opacity-60">+91 90045 56455</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant opacity-60">+91 93242 84726</p>
+</div>
+</div>
+</div>
+<div class="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop py-8 border-t border-outline-variant/10 flex justify-between">
+<span class="font-label-sm text-label-sm text-outline opacity-40">© 2024 HELIX SYSTEMS. ALL RIGHTS RESERVED.</span>
+</div>
+</footer>
+<script>
+        // Micro-interactions for scrolling
+        window.addEventListener('scroll', () => {
+            const cards = document.querySelectorAll('.project-card');
+            const scrollPos = window.scrollY;
+            const windowHeight = window.innerHeight;
+
+            cards.forEach((card, index) => {
+                const rect = card.getBoundingClientRect();
+                const parentRect = card.parentElement.getBoundingClientRect();
+                
+                // Calculate progress of card through the sticky section
+                let progress = -parentRect.top / windowHeight;
+                progress = Math.max(0, Math.min(1, progress));
+
+                // Scale and transform effect based on scroll position
+                if (progress > 0) {
+                    const scale = 1 - (progress * 0.1);
+                    const opacity = 1 - (progress * 0.5);
+                    const translateY = -progress * 50;
+                    
+                    card.style.transform = `scale(${scale}) translateY(${translateY}px)`;
+                    card.style.opacity = opacity;
+                } else {
+                    card.style.transform = `scale(1) translateY(0px)`;
+                    card.style.opacity = 1;
+                }
+            });
+
+            // TopAppBar blur adjustment
+            const header = document.querySelector('header');
+            if (scrollPos > 100) {
+                header.classList.add('w-full', 'top-0', 'rounded-none');
+                header.classList.remove('w-[90%]', 'top-4', 'rounded-full');
+            } else {
+                header.classList.remove('w-full', 'top-0', 'rounded-none');
+                header.classList.add('w-[90%]', 'top-4', 'rounded-full');
+            }
+        });
+
+        // Magnetic button effect simple version
+        const buttons = document.querySelectorAll('.magnetic-btn, button');
+        buttons.forEach(btn => {
+            btn.addEventListener('mousemove', (e) => {
+                const rect = btn.getBoundingClientRect();
+                const x = e.clientX - rect.left - rect.width / 2;
+                const y = e.clientY - rect.top - rect.height / 2;
+                btn.style.transform = `translate(${x * 0.1}px, ${y * 0.1}px) scale(1.02)`;
+            });
+            btn.addEventListener('mouseleave', () => {
+                btn.style.transform = `translate(0, 0) scale(1)`;
+            });
+        });
+    </script>
+</body></html>
