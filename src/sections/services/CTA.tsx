@@ -1,20 +1,32 @@
+import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
 export default function CTASection() {
   return (
-    <section className="mt-32 px-margin-mobile md:px-margin-desktop max-w-7xl mx-auto text-center">
-      <div className="relative py-20 px-8 rounded-lg overflow-hidden"
+    <section className="mt-24 md:mt-32 px-margin-mobile md:px-margin-desktop max-w-7xl mx-auto text-center">
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+        className="relative py-16 md:py-20 px-6 md:px-8 rounded-lg overflow-hidden"
         style={{ backdropFilter: "blur(24px)", background: "rgba(208, 188, 255, 0.05)", border: "1px solid rgba(208, 188, 255, 0.2)" }}
       >
-        <div className="absolute w-[300px] h-[300px] rounded-full pointer-events-none -top-24 -left-24" style={{ background: "radial-gradient(circle, rgba(109, 59, 215, 0.15) 0%, transparent 70%)" }} />
-        <div className="absolute w-[300px] h-[300px] rounded-full pointer-events-none -bottom-24 -right-24" style={{ background: "radial-gradient(circle, rgba(109, 59, 215, 0.15) 0%, transparent 70%)" }} />
-        <h3 className="font-display-lg text-display-lg mb-6">Ready to upgrade your system?</h3>
-        <p className="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-2xl mx-auto">Join the ranks of high-performance digital entities leveraging HELIX systems.</p>
-        <div className="flex flex-col md:flex-row gap-4 justify-center">
-          <Link to="/contact" className="bg-primary text-on-primary-container px-10 py-4 rounded-full font-label-md text-label-md hover:scale-105 transition-all">Start Project</Link>
-          <Link to="/projects" className="border border-white/10 bg-white/5 text-on-surface px-10 py-4 rounded-full font-label-md text-label-md hover:bg-white/10 transition-all">View Our Work</Link>
+        <div className="absolute w-[250px] md:w-[300px] h-[250px] md:h-[300px] rounded-full pointer-events-none -top-24 -left-24" style={{ background: "radial-gradient(circle, rgba(109, 59, 215, 0.15) 0%, transparent 70%)" }} />
+        <div className="absolute w-[250px] md:w-[300px] h-[250px] md:h-[300px] rounded-full pointer-events-none -bottom-24 -right-24" style={{ background: "radial-gradient(circle, rgba(109, 59, 215, 0.15) 0%, transparent 70%)" }} />
+        <h3 className="font-display-lg text-display-lg mb-4">Let's Build Something Together</h3>
+        <p className="font-body-md text-body-md text-on-surface-variant mb-8 max-w-xl mx-auto">
+          Have a project in mind? Reach out and let's discuss how we can help bring your vision to life.
+        </p>
+        <div className="flex flex-col sm:flex-row gap-3 justify-center">
+          <Link to="/contact" className="bg-primary text-on-primary-container px-8 py-4 rounded-full font-label-md text-label-md hover:scale-[1.02] active:scale-95 transition-all duration-300">
+            Start a Project
+          </Link>
+          <Link to="/projects" className="border border-white/10 bg-white/5 text-on-surface px-8 py-4 rounded-full font-label-md text-label-md hover:bg-white/10 active:bg-white/15 transition-all duration-300">
+            View Our Work
+          </Link>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }

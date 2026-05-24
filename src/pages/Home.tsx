@@ -1,8 +1,11 @@
 import { useEffect } from "react";
+import SEO from "../components/seo/SEO";
 import Hero from "../sections/home/Hero";
 import Marquee from "../sections/home/Marquee";
 import Process from "../sections/home/Process";
 import ContactPreview from "../sections/home/ContactPreview";
+import FeaturedProjects from "../sections/home/FeaturedProjects";
+import Stats from "../sections/home/Stats";
 
 export default function Home() {
   useEffect(() => {
@@ -16,31 +19,20 @@ export default function Home() {
       });
     };
 
-    const timelineGrow = () => {
-      const el = document.getElementById("timeline-glow");
-      if (!el) return;
-      let progress = 0;
-      const animate = () => {
-        progress += 0.2;
-        if (progress > 100) progress = -20;
-        el.style.background = `linear-gradient(90deg, transparent, #d0bcff ${progress}%, transparent ${progress + 20}%)`;
-        requestAnimationFrame(animate);
-      };
-      animate();
-    };
-
     document.addEventListener("mousemove", handleMouse);
-    const timer = setTimeout(timelineGrow, 100);
-
-    return () => {
-      document.removeEventListener("mousemove", handleMouse);
-      clearTimeout(timer);
-    };
+    return () => document.removeEventListener("mousemove", handleMouse);
   }, []);
 
   return (
     <>
+      <SEO
+        title="Digital Systems for Modern Businesses"
+        description="Websites, automation, branding, and scalable systems designed for the next generation of businesses. Explore our live portfolio of deployed platforms."
+        ogUrl="https://studio.buildhelix.org"
+      />
       <Hero />
+      <Stats />
+      <FeaturedProjects />
       <Marquee />
       <Process />
       <ContactPreview />

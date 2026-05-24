@@ -1,72 +1,169 @@
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
+import { PROJECTS } from "../../data/projects";
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.15 },
+  },
+};
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 60, scale: 0.95 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: { duration: 0.8, ease: [0.25, 0.1, 0.25, 1] as const },
+  },
+};
+
+function BrowserFrame({ project }: { project: (typeof PROJECTS)[number] }) {
+  return (
+    <div className="browser-frame w-full">
+      <div className="browser-bar">
+        <span className="browser-dot" style={{ background: "#FF5F56" }} />
+        <span className="browser-dot" style={{ background: "#FFBD2E" }} />
+        <span className="browser-dot" style={{ background: "#27C93F" }} />
+        <span className="browser-url">{project.liveUrl.replace("https://", "")}</span>
+      </div>
+      <div className="relative aspect-video overflow-hidden bg-surface-container-high">
+        <img
+          src={project.image}
+          alt={`${project.title} website preview`}
+          loading="lazy"
+          className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105"
+          style={{ filter: "grayscale(30%)" }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
+      </div>
+    </div>
+  );
+}
+
 export default function ProjectShowcase() {
-  const projects = [
-    {
-      image:
-        "https://lh3.googleusercontent.com/aida-public/AB6AXuC-gZtmb8jwf8hIQQOJQjERvT9-UwlXIAKqA-dtcdggDnLi37c6VB69S30hX4W5_9rdggyshsVVeqKURvL4NoVq8YZXhCPlGpYcZ2YfKtTCi1cokDYxIEH2ZjOzahNE3UuyttB61QhFOlWaEUXg-rpT-JaCeyRv3V9KPWvLRFByOWT1orR2fbMlnptIPGuUOf425rruOLEEhtTr6MQNkc9xsUI-L0shDy6xB4qto-BmUSP53lQA0Zj8ecFw5uRsVvvE2DNWadlF2cq_",
-      tags: ["Visual Identity", "UX Design"],
-      title: "Project NEBULA",
-      description:
-        "Creating a unified digital ecosystem for the next generation of interstellar logistics.",
-    },
-    {
-      image:
-        "https://lh3.googleusercontent.com/aida-public/AB6AXuB6MhDj1gqa4SG5SPL2ds3djHyO18QiTHqcVpo9AaLPSfP3mIA4cCcFWPyYMH-7bMcZArDhH2LRE4H81yMBLx4nWKelrkXDZ09GsM6LOnsDTZsKs4qr0CLXeljILZitxUQqPF-eMEJrZTbUOYEVQCcYeJ5bgFoar_XvB4Mmr-fesh-hLjAyax7z3KCie0dBaXYAH-5d9ucnRAc5EuLjTloPF1mpTR6upoKfq-Uxp8_FKRQJBHGfamqIPI4G3iwO14ckbCzY31f5GFbD",
-      tags: ["Web Development", "3D Motion"],
-      title: "KINETIC Labs",
-      description:
-        "Exploring the friction between digital interfaces and physical user interactions.",
-    },
-    {
-      image:
-        "https://lh3.googleusercontent.com/aida-public/AB6AXuBg5NEhsrDAyFTQEwAmu2zghI9BBT14LehmGskhWJoP74cHbJOPxYuiJuMsYvE9hDRVV1X1N2aoCWzV_R-gw1A-FoNxRNK_1RAV-eQ6q1Yg3eQroyU3TwzWUTvYvlz9TaZT9vM3yjNXLx1u7XS4DlP8c-xPW9hGwxYcwQ5trO0kpG6fpyhx45kVG8ef8fdWQ9xdMWTJV365jIxB4_FiJFH3wq_6q9Fzxt_nqdxmFSOaCD8oY1zK6scTxpQ6nEF6v0mq3jxtushkpySo",
-      tags: ["AI Integration", "Strategy"],
-      title: "OSIRIS Core",
-      description:
-        "An intelligent infrastructure system managing high-density urban environments.",
-    },
-  ];
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section className="relative pb-[20vh] max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop">
-      {projects.map((project, index) => (
-        <section key={index} className="h-screen flex items-center justify-center sticky top-0">
-          <div
-            className="w-full h-[618px] md:h-[707px] rounded-xl overflow-hidden relative group"
-            style={{ backdropFilter: "blur(24px)", background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.1)" }}
+    <section className="relative py-24 md:py-48 max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop">
+      <div className="mb-16 md:mb-32">
+        <motion.span
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6 }}
+          className="font-label-sm text-label-sm text-primary uppercase tracking-[0.2em] block mb-4"
+        >
+          Deployed Projects
+        </motion.span>
+        <motion.h2
+          initial={{ opacity: 0, y: 30 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8, delay: 0.1 }}
+          className="font-display-lg text-display-lg md:font-display-2xl md:text-display-2xl tracking-tighter max-w-4xl"
+        >
+          Real Projects,<br />
+          <span className="text-primary-fixed-dim">Built for Real Brands.</span>
+        </motion.h2>
+      </div>
+
+      <motion.div
+        ref={ref}
+        variants={containerVariants}
+        initial="hidden"
+        animate={inView ? "visible" : "hidden"}
+        className="flex flex-col gap-12 md:gap-20"
+      >
+        {PROJECTS.map((project, i) => (
+          <motion.div
+            key={project.id}
+            variants={cardVariants}
+            className={`group flex flex-col ${i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"} gap-6 md:gap-12 items-stretch`}
           >
-            <img
-              src={project.image}
-              alt={project.title}
-              className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-110 transition-transform duration-[2000ms]"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />
-            <div className="absolute bottom-0 left-0 w-full p-8 md:p-16 flex flex-col md:flex-row justify-between items-end gap-8">
-              <div>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.tags.map((tag, i) => (
-                    <span
-                      key={i}
-                      className="bg-white/10 backdrop-blur-md px-3 py-1 rounded-full text-[10px] font-label-sm text-on-surface uppercase tracking-wider border border-white/5"
+            <div className="flex-1 min-w-0">
+              <div
+                className="rounded-2xl overflow-hidden h-full transition-all duration-500"
+                style={{
+                  backdropFilter: "blur(24px)",
+                  background: "rgba(255, 255, 255, 0.03)",
+                  border: "1px solid rgba(255, 255, 255, 0.08)",
+                }}
+                while-hover="hover"
+              >
+                <BrowserFrame project={project} />
+                <div className="p-5 md:p-8 space-y-4">
+                  <div className="flex flex-wrap gap-2">
+                    {project.techStack.map((tech) => (
+                      <span
+                        key={tech}
+                        className="px-2.5 py-1 rounded-md text-[10px] font-label-sm bg-white/[0.04] border border-white/[0.06] text-outline"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    <a
+                      href={project.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1 md:flex-none flex items-center justify-center gap-2 bg-primary text-on-primary-container px-5 py-3 rounded-full font-label-md text-label-md hover:scale-[1.02] active:scale-95 transition-all duration-300"
                     >
-                      {tag}
-                    </span>
-                  ))}
+                      <span>Live Demo</span>
+                      <span className="material-symbols-outlined text-[18px]">open_in_new</span>
+                    </a>
+                    <button
+                      onClick={() => {
+                        const el = document.getElementById(`case-study-${project.id}`);
+                        el?.scrollIntoView({ behavior: "smooth", block: "start" });
+                      }}
+                      className="flex-1 md:flex-none flex items-center justify-center gap-2 border border-white/10 px-5 py-3 rounded-full font-label-md text-label-md hover:bg-white/5 active:bg-white/10 transition-all duration-300"
+                    >
+                      <span>Case Study</span>
+                      <span className="material-symbols-outlined text-[18px]">arrow_downward</span>
+                    </button>
+                  </div>
                 </div>
-                <h3 className="font-display-lg text-display-lg tracking-tight">{project.title}</h3>
-                <p className="font-body-lg text-body-lg text-on-surface-variant/80 max-w-md">
-                  {project.description}
-                </p>
               </div>
-              <button className="group/btn flex items-center gap-4 bg-primary-fixed text-on-primary-fixed px-8 py-4 rounded-full font-label-md text-label-md hover:bg-white transition-all duration-500 shadow-xl">
-                View Case Study
-                <span className="material-symbols-outlined transition-transform duration-300 group-hover/btn:translate-x-1">
-                  arrow_forward
-                </span>
-              </button>
             </div>
-          </div>
-        </section>
-      ))}
+
+            <div className="flex-1 flex flex-col justify-center py-4 md:py-8">
+              <span
+                className="inline-block w-fit px-3 py-1 rounded-full text-[10px] font-label-sm uppercase tracking-widest mb-4"
+                style={{
+                  backdropFilter: "blur(8px)",
+                  background: `${project.color}15`,
+                  border: `1px solid ${project.color}30`,
+                  color: project.color,
+                }}
+              >
+                {project.industry}
+              </span>
+              <h3 className="font-display-lg text-display-lg mb-2 tracking-tight">
+                {project.title}
+              </h3>
+              <p className="font-label-md text-label-md text-primary-fixed-dim mb-3">
+                {project.tagline}
+              </p>
+              <p className="font-body-md text-body-md text-on-surface-variant/80 leading-relaxed">
+                {project.description}
+              </p>
+              <div className="flex flex-wrap gap-2 mt-5">
+                {project.tags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="px-3 py-1 rounded-full bg-white/5 border border-white/10 font-label-sm text-label-sm"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </motion.div>
+        ))}
+      </motion.div>
     </section>
   );
 }

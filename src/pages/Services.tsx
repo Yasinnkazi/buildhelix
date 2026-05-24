@@ -1,31 +1,17 @@
-import { useEffect } from "react";
+import SEO from "../components/seo/SEO";
 import Hero from "../sections/services/Hero";
 import ServicePanels from "../sections/services/ServicePanels";
 import CTASection from "../sections/services/CTA";
 
 export default function Services() {
-  useEffect(() => {
-    const observerOptions = { threshold: 0.1 };
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("opacity-100", "translate-y-0");
-          entry.target.classList.remove("opacity-0", "translate-y-20");
-        }
-      });
-    }, observerOptions);
-
-    document.querySelectorAll(".service-card").forEach((card) => {
-      card.classList.add("opacity-0", "translate-y-20", "transition-all", "duration-1000");
-      observer.observe(card);
-    });
-
-    return () => observer.disconnect();
-  }, []);
-
   return (
     <div className="relative pt-40 pb-24">
       <div className="noise-overlay fixed inset-0 z-[100]" />
+      <SEO
+        title="Services"
+        description="High-performance digital architecture — website development, GMB optimization, automation systems, branding, and scalable cloud infrastructure."
+        ogUrl="https://studio.buildhelix.org/services"
+      />
       <Hero />
       <ServicePanels />
       <CTASection />

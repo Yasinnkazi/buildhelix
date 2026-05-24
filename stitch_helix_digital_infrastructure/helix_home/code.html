@@ -1,373 +1,373 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 
-<html class="dark" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>HELIX | Digital Systems for Modern Businesses</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Chivo:wght@300;400;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;family=Geist:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<style>
-        :root {
-            --primary: #d0bcff;
-            --surface: #121414;
-        }
+    <html class="dark" lang="en"><head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>HELIX | Digital Systems for Modern Businesses</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Chivo:wght@300;400;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;family=Geist:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <style>
+            :root {
+                --primary: #d0bcff;
+                --surface: #121414;
+            }
+            body {
+                background-color: #121414;
+                color: #e2e2e2;
+                overflow-x: hidden;
+                font-family: 'Inter', sans-serif;
+            }
+            .glass-panel {
+                backdrop-filter: blur(24px);
+                background: rgba(255, 255, 255, 0.03);
+                border: 1px solid rgba(255, 255, 255, 0.08);
+            }
+            .text-gradient {
+                background: linear-gradient(to right, #d0bcff, #adc6ff, #bec6e0, #d0bcff);
+                background-size: 200% auto;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                animation: gradient-flow 8s linear infinite;
+            }
+            @keyframes gradient-flow {
+                0% { background-position: 0% center; }
+                100% { background-position: 200% center; }
+            }
+            .marquee-track {
+                display: flex;
+                width: max-content;
+                animation: scroll 40s linear infinite;
+            }
+            @keyframes scroll {
+                0% { transform: translateX(0); }
+                100% { transform: translateX(-50%); }
+            }
+            .parallax-panel {
+                transition: transform 0.2s cubic-bezier(0.2, 0, 0.2, 1);
+            }
+            .glow-line {
+                background: linear-gradient(90deg, transparent, var(--primary), transparent);
+                height: 1px;
+                width: 100%;
+            }
+        </style>
+    <script id="tailwind-config">
+            tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                "colors": {
+                        "primary-fixed": "#e9ddff",
+                        "surface-dim": "#121414",
+                        "primary-container": "#a078ff",
+                        "on-primary-fixed": "#23005c",
+                        "on-tertiary": "#283044",
+                        "secondary-fixed": "#d8e2ff",
+                        "surface-variant": "#333535",
+                        "error-container": "#93000a",
+                        "on-tertiary-container": "#22293d",
+                        "primary-fixed-dim": "#d0bcff",
+                        "surface-tint": "#d0bcff",
+                        "secondary-fixed-dim": "#adc6ff",
+                        "outline": "#958ea0",
+                        "on-primary-container": "#340080",
+                        "on-secondary": "#002e6a",
+                        "background": "#121414",
+                        "surface-container-low": "#1a1c1c",
+                        "tertiary-fixed-dim": "#bec6e0",
+                        "surface": "#121414",
+                        "on-surface": "#e2e2e2",
+                        "surface-container-high": "#282a2b",
+                        "on-background": "#e2e2e2",
+                        "on-secondary-fixed-variant": "#004395",
+                        "inverse-primary": "#6d3bd7",
+                        "tertiary": "#bec6e0",
+                        "on-error": "#690005",
+                        "on-primary": "#3c0091",
+                        "secondary-container": "#0566d9",
+                        "surface-container-highest": "#333535",
+                        "on-tertiary-fixed-variant": "#3f465c",
+                        "surface-container": "#1e2020",
+                        "inverse-on-surface": "#2f3131",
+                        "on-tertiary-fixed": "#131b2e",
+                        "on-surface-variant": "#cbc3d7",
+                        "on-secondary-container": "#e6ecff",
+                        "primary": "#d0bcff",
+                        "on-primary-fixed-variant": "#5516be",
+                        "outline-variant": "#494454",
+                        "on-secondary-fixed": "#001a42",
+                        "inverse-surface": "#e2e2e2",
+                        "tertiary-container": "#8990a8",
+                        "error": "#ffb4ab",
+                        "surface-container-lowest": "#0c0f0f",
+                        "on-error-container": "#ffdad6",
+                        "secondary": "#adc6ff",
+                        "tertiary-fixed": "#dae2fd",
+                        "surface-bright": "#38393a"
+                },
+                "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                },
+                "spacing": {
+                        "container-max": "1440px",
+                        "gutter": "24px",
+                        "margin-desktop": "64px",
+                        "margin-mobile": "20px",
+                        "unit": "8px"
+                },
+                "fontFamily": {
+                        "label-md": ["Geist"],
+                        "label-sm": ["Geist"],
+                        "headline-lg": ["Chivo"],
+                        "headline-lg-mobile": ["Chivo"],
+                        "display-2xl": ["Chivo"],
+                        "body-md": ["Inter"],
+                        "display-lg": ["Chivo"],
+                        "body-lg": ["Inter"]
+                },
+                "fontSize": {
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "500"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "display-2xl": ["72px", {"lineHeight": "80px", "letterSpacing": "-0.04em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.03em", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "400"}]
+                }
+                },
+            },
+            }
+        </script>
+    <style>
         body {
-            background-color: #121414;
-            color: #e2e2e2;
-            overflow-x: hidden;
-            font-family: 'Inter', sans-serif;
-        }
-        .glass-panel {
-            backdrop-filter: blur(24px);
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-        }
-        .text-gradient {
-            background: linear-gradient(to right, #d0bcff, #adc6ff, #bec6e0, #d0bcff);
-            background-size: 200% auto;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: gradient-flow 8s linear infinite;
-        }
-        @keyframes gradient-flow {
-            0% { background-position: 0% center; }
-            100% { background-position: 200% center; }
-        }
-        .marquee-track {
-            display: flex;
-            width: max-content;
-            animation: scroll 40s linear infinite;
-        }
-        @keyframes scroll {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-        }
-        .parallax-panel {
-            transition: transform 0.2s cubic-bezier(0.2, 0, 0.2, 1);
-        }
-        .glow-line {
-            background: linear-gradient(90deg, transparent, var(--primary), transparent);
-            height: 1px;
-            width: 100%;
+        min-height: max(884px, 100dvh);
         }
     </style>
-<script id="tailwind-config">
-        tailwind.config = {
-          darkMode: "class",
-          theme: {
-            extend: {
-              "colors": {
-                      "primary-fixed": "#e9ddff",
-                      "surface-dim": "#121414",
-                      "primary-container": "#a078ff",
-                      "on-primary-fixed": "#23005c",
-                      "on-tertiary": "#283044",
-                      "secondary-fixed": "#d8e2ff",
-                      "surface-variant": "#333535",
-                      "error-container": "#93000a",
-                      "on-tertiary-container": "#22293d",
-                      "primary-fixed-dim": "#d0bcff",
-                      "surface-tint": "#d0bcff",
-                      "secondary-fixed-dim": "#adc6ff",
-                      "outline": "#958ea0",
-                      "on-primary-container": "#340080",
-                      "on-secondary": "#002e6a",
-                      "background": "#121414",
-                      "surface-container-low": "#1a1c1c",
-                      "tertiary-fixed-dim": "#bec6e0",
-                      "surface": "#121414",
-                      "on-surface": "#e2e2e2",
-                      "surface-container-high": "#282a2b",
-                      "on-background": "#e2e2e2",
-                      "on-secondary-fixed-variant": "#004395",
-                      "inverse-primary": "#6d3bd7",
-                      "tertiary": "#bec6e0",
-                      "on-error": "#690005",
-                      "on-primary": "#3c0091",
-                      "secondary-container": "#0566d9",
-                      "surface-container-highest": "#333535",
-                      "on-tertiary-fixed-variant": "#3f465c",
-                      "surface-container": "#1e2020",
-                      "inverse-on-surface": "#2f3131",
-                      "on-tertiary-fixed": "#131b2e",
-                      "on-surface-variant": "#cbc3d7",
-                      "on-secondary-container": "#e6ecff",
-                      "primary": "#d0bcff",
-                      "on-primary-fixed-variant": "#5516be",
-                      "outline-variant": "#494454",
-                      "on-secondary-fixed": "#001a42",
-                      "inverse-surface": "#e2e2e2",
-                      "tertiary-container": "#8990a8",
-                      "error": "#ffb4ab",
-                      "surface-container-lowest": "#0c0f0f",
-                      "on-error-container": "#ffdad6",
-                      "secondary": "#adc6ff",
-                      "tertiary-fixed": "#dae2fd",
-                      "surface-bright": "#38393a"
-              },
-              "borderRadius": {
-                      "DEFAULT": "1rem",
-                      "lg": "2rem",
-                      "xl": "3rem",
-                      "full": "9999px"
-              },
-              "spacing": {
-                      "container-max": "1440px",
-                      "gutter": "24px",
-                      "margin-desktop": "64px",
-                      "margin-mobile": "20px",
-                      "unit": "8px"
-              },
-              "fontFamily": {
-                      "label-md": ["Geist"],
-                      "label-sm": ["Geist"],
-                      "headline-lg": ["Chivo"],
-                      "headline-lg-mobile": ["Chivo"],
-                      "display-2xl": ["Chivo"],
-                      "body-md": ["Inter"],
-                      "display-lg": ["Chivo"],
-                      "body-lg": ["Inter"]
-              },
-              "fontSize": {
-                      "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "500"}],
-                      "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "500"}],
-                      "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
-                      "headline-lg-mobile": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
-                      "display-2xl": ["72px", {"lineHeight": "80px", "letterSpacing": "-0.04em", "fontWeight": "700"}],
-                      "body-md": ["16px", {"lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400"}],
-                      "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.03em", "fontWeight": "600"}],
-                      "body-lg": ["18px", {"lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "400"}]
-              }
-            },
-          },
-        }
-      </script>
-<style>
-    body {
-      min-height: max(884px, 100dvh);
-    }
-  </style>
-  </head>
-<body class="bg-background selection:bg-primary-container selection:text-on-primary-container">
-<!-- TopAppBar -->
-<header class="fixed top-4 left-1/2 -translate-x-1/2 w-[90%] max-w-7xl rounded-full bg-surface/10 dark:bg-surface-dim/10 backdrop-blur-xl border border-white/10 dark:border-white/5 backdrop-saturate-150 shadow-2xl flex justify-between items-center px-8 py-3 z-50 transition-all duration-300">
-<div class="flex items-center gap-2">
-<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">blur_on</span>
-<span class="font-headline-lg text-headline-lg tracking-tighter text-on-surface dark:text-on-surface-variant">HELIX</span>
-</div>
-<nav class="hidden md:flex items-center gap-8">
-    <a class="font-label-md text-label-md text-on-surface-variant dark:text-outline-variant hover:text-on-surface dark:hover:text-on-surface hover:scale-105 transition-all duration-300" href="#">Home</a>
-    <a class="font-label-md text-label-md text-on-surface-variant dark:text-outline-variant hover:text-on-surface dark:hover:text-on-surface hover:scale-105 transition-all duration-300" href="#">Services</a>
-    <a class="font-label-md text-label-md text-on-surface-variant dark:text-outline-variant hover:text-on-surface dark:hover:text-on-surface hover:scale-105 transition-all duration-300" href="#">Projects</a>
-    <a class="font-label-md text-label-md text-on-surface-variant dark:text-outline-variant hover:text-on-surface dark:hover:text-on-surface hover:scale-105 transition-all duration-300" href="#">About</a>
-    <a class="font-label-md text-label-md text-on-surface-variant dark:text-outline-variant hover:text-on-surface dark:hover:text-on-surface hover:scale-105 transition-all duration-300" href="#">Contact</a>
-</nav>
-<button class="bg-primary text-on-primary-container px-6 py-2 rounded-full font-label-md text-label-md hover:scale-105 hover:bg-white/5 transition-all duration-300 active:scale-95">
-            Book a Call
-        </button>
-</header>
-<main>
-<!-- Hero Section -->
-<section class="relative min-h-screen flex flex-col items-center justify-center pt-32 overflow-hidden px-margin-mobile md:px-margin-desktop">
-<!-- Atmospheric Glows -->
-<div class="absolute top-[-20%] left-[-10%] w-[60%] h-[60%] bg-primary/10 rounded-full blur-[120px] pointer-events-none"></div>
-<div class="absolute bottom-[-20%] right-[-10%] w-[50%] h-[50%] bg-secondary-container/10 rounded-full blur-[120px] pointer-events-none"></div>
-<div class="z-10 text-center max-w-5xl mx-auto">
-<h1 class="font-display-2xl text-display-2xl mb-8 leading-[1] text-gradient">
-                    BUILDING DIGITAL SYSTEMS FOR MODERN BUSINESSES
-                </h1>
-<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto mb-12 opacity-80">
-                    Websites, automation, branding, and scalable systems designed for the next generation of businesses.
-                </p>
-<div class="flex flex-col sm:flex-row gap-4 justify-center">
-<button class="bg-primary text-on-primary font-label-md text-label-md px-10 py-4 rounded-full flex items-center gap-2 hover:scale-105 transition-all">
-                        Start Your Journey <span class="material-symbols-outlined">arrow_right_alt</span>
-</button>
-<button class="border border-outline-variant text-on-surface font-label-md text-label-md px-10 py-4 rounded-full backdrop-blur hover:bg-white/5 transition-all">
-                        View Portfolio
-                    </button>
-</div>
-</div>
-<!-- Hero Visual: Floating Panels -->
-<div class="relative w-full max-w-7xl h-[400px] mt-16 perspective-1000">
-<!-- Dashboard Panel -->
-<div class="parallax-panel absolute top-10 left-0 md:left-20 w-[300px] md:w-[450px] aspect-video glass-panel rounded-xl shadow-2xl p-4 transform rotate-3 z-30" style="transform: perspective(1000px) rotateY(10deg) rotateX(10deg);">
-<div class="w-full h-full rounded-lg overflow-hidden bg-surface-container-high/40">
-<img class="w-full h-full object-cover opacity-60 grayscale mix-blend-screen" data-alt="A futuristic web analytics dashboard with glowing violet charts and complex data visualizations. The interface is clean and minimalist, set against a dark glass background with sharp, glowing lines and technical readouts that evoke a high-performance digital environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDyOBHNz0RYFMWjTifx54S6DMzqrOkrN1S_llOnlqzuGcZMnjIxOG1s-ejTdWxRN50RiM21KrNsMhUY0M9A03a1CaP1IBSYAbE0KsOXX3E_WjtiAw8iNyXcCBFfjpK9J1zkk1ReyXZUFcjfWIXVBporIlR_vPsq3Uk651G3HFNbFqOudLVPsAYHVNpWcOsX2-nTE_Tm0Mjp2bnbB1mIkfpoF1WwbFjHwOYC525g3tF_pifQdimkOpuLS2l8OkEsjbNKLDwzCzo6lMC9"/>
-</div>
-</div>
-<!-- Automation Flow -->
-<div class="parallax-panel absolute bottom-10 right-0 md:right-20 w-[280px] md:w-[400px] aspect-video glass-panel rounded-xl shadow-2xl p-4 transform -rotate-2 z-40" style="transform: perspective(1000px) rotateY(-5deg) rotateX(-5deg);">
-<div class="w-full h-full rounded-lg overflow-hidden bg-primary/5 flex items-center justify-center">
-<div class="space-y-4 w-full px-4">
-<div class="h-2 w-3/4 bg-primary/20 rounded"></div>
-<div class="h-2 w-1/2 bg-outline-variant/40 rounded"></div>
-<div class="flex justify-between">
-<div class="w-8 h-8 rounded-full bg-primary/30"></div>
-<div class="w-8 h-8 rounded-full bg-secondary-container/30"></div>
-</div>
-</div>
-</div>
-</div>
-<!-- Center Brand Focal -->
-<div class="parallax-panel absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200px] aspect-square bg-primary/10 rounded-full blur-[40px] z-20"></div>
-</div>
-</section>
-<!-- Marquee Section -->
-<section class="py-16 border-y border-outline-variant/10 bg-surface-container-lowest/50 relative overflow-hidden">
-<div class="marquee-track flex items-center gap-16 md:gap-32">
-<!-- Set 1 -->
-<span class="font-display-lg text-display-lg text-outline opacity-20 tracking-tighter">REACT</span>
-<span class="font-display-lg text-display-lg text-outline opacity-20 tracking-tighter">NEXT.JS</span>
-<span class="font-display-lg text-display-lg text-outline opacity-20 tracking-tighter">AI SYSTEMS</span>
-<span class="font-display-lg text-display-lg text-outline opacity-20 tracking-tighter">DIGITAL INFRASTRUCTURE</span>
-<span class="font-display-lg text-display-lg text-outline opacity-20 tracking-tighter">UI/UX ENGINEERING</span>
-<span class="font-display-lg text-display-lg text-outline opacity-20 tracking-tighter">AUTOMATION</span>
-<!-- Set 2 -->
-<span class="font-display-lg text-display-lg text-outline opacity-20 tracking-tighter">REACT</span>
-<span class="font-display-lg text-display-lg text-outline opacity-20 tracking-tighter">NEXT.JS</span>
-<span class="font-display-lg text-display-lg text-outline opacity-20 tracking-tighter">AI SYSTEMS</span>
-<span class="font-display-lg text-display-lg text-outline opacity-20 tracking-tighter">DIGITAL INFRASTRUCTURE</span>
-<span class="font-display-lg text-display-lg text-outline opacity-20 tracking-tighter">UI/UX ENGINEERING</span>
-<span class="font-display-lg text-display-lg text-outline opacity-20 tracking-tighter">AUTOMATION</span>
-</div>
-</section>
-<!-- Process Section -->
-<section class="py-32 px-margin-mobile md:px-margin-desktop max-w-7xl mx-auto">
-<div class="mb-24">
-<h2 class="font-headline-lg text-headline-lg text-on-surface mb-4">OUR PROCESS</h2>
-<div class="w-24 h-1 bg-primary"></div>
-</div>
-<div class="relative grid grid-cols-1 md:grid-cols-5 gap-8">
-<!-- Timeline Connecting Line -->
-<div class="hidden md:block absolute top-1/2 left-0 w-full h-[1px] bg-outline-variant/30 -translate-y-1/2 z-0">
-<div class="glow-line" id="timeline-glow"></div>
-</div>
-<!-- Process Steps -->
-<div class="relative z-10 flex flex-col items-center text-center group">
-<div class="w-16 h-16 rounded-full glass-panel flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500 border-primary/20">
-<span class="material-symbols-outlined text-primary">search</span>
-</div>
-<h3 class="font-label-md text-label-md mb-2 text-primary uppercase tracking-widest">Discover</h3>
-<p class="font-body-md text-body-md text-on-surface-variant opacity-60">Deep dive into goals.</p>
-</div>
-<div class="relative z-10 flex flex-col items-center text-center group">
-<div class="w-16 h-16 rounded-full glass-panel flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500">
-<span class="material-symbols-outlined text-on-surface">pen_size_2</span>
-</div>
-<h3 class="font-label-md text-label-md mb-2 text-on-surface uppercase tracking-widest">Design</h3>
-<p class="font-body-md text-body-md text-on-surface-variant opacity-60">High-fidelity vision.</p>
-</div>
-<div class="relative z-10 flex flex-col items-center text-center group">
-<div class="w-16 h-16 rounded-full glass-panel flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500 border-primary/20">
-<span class="material-symbols-outlined text-primary">code</span>
-</div>
-<h3 class="font-label-md text-label-md mb-2 text-primary uppercase tracking-widest">Build</h3>
-<p class="font-body-md text-body-md text-on-surface-variant opacity-60">Pixel-perfect code.</p>
-</div>
-<div class="relative z-10 flex flex-col items-center text-center group">
-<div class="w-16 h-16 rounded-full glass-panel flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500">
-<span class="material-symbols-outlined text-on-surface">bolt</span>
-</div>
-<h3 class="font-label-md text-label-md mb-2 text-on-surface uppercase tracking-widest">Optimize</h3>
-<p class="font-body-md text-body-md text-on-surface-variant opacity-60">Speed &amp; Performance.</p>
-</div>
-<div class="relative z-10 flex flex-col items-center text-center group">
-<div class="w-16 h-16 rounded-full glass-panel flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500 border-primary/20">
-<span class="material-symbols-outlined text-primary">rocket_launch</span>
-</div>
-<h3 class="font-label-md text-label-md mb-2 text-primary uppercase tracking-widest">Scale</h3>
-<p class="font-body-md text-body-md text-on-surface-variant opacity-60">Future-proof growth.</p>
-</div>
-</div>
-</section>
-<!-- Contact Preview Section -->
-<section class="py-32 px-margin-mobile md:px-margin-desktop relative overflow-hidden">
-<div class="max-w-7xl mx-auto glass-panel rounded-xl md:rounded-lg p-16 md:p-32 text-center relative overflow-hidden group">
-<div class="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-1000"></div>
-<h2 class="font-display-2xl text-display-2xl mb-12 relative z-10">LET'S BUILD SOMETHING MODERN</h2>
-<div class="relative z-10 flex flex-col md:flex-row items-center justify-center gap-8">
-<a class="group flex items-center gap-4 text-primary font-display-lg text-display-lg hover:translate-x-4 transition-transform duration-500" href="mailto:hello@helix.systems">
-                        HELLO@HELIX.SYSTEMS
-                        <span class="material-symbols-outlined text-display-lg">north_east</span>
-</a>
-</div>
-<!-- Visual Texture -->
-<div class="absolute top-0 right-0 w-64 h-64 bg-primary/20 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2"></div>
-<div class="absolute bottom-0 left-0 w-64 h-64 bg-secondary-container/20 rounded-full blur-[100px] translate-y-1/2 -translate-x-1/2"></div>
-</div>
-</section>
-</main>
-<!-- Footer -->
-<footer class="w-full rounded-t-xl bg-surface-container-lowest dark:bg-surface-dim border-t border-outline-variant/20">
-<div class="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop py-24 flex flex-col md:flex-row justify-between gap-16">
-<div class="flex flex-col gap-8 max-w-sm">
-<span class="font-display-2xl text-display-2xl tracking-tighter text-on-surface dark:text-on-surface">HELIX</span>
-<p class="font-body-md text-body-md text-on-surface-variant opacity-60">Architecting the digital frontier. We build systems that drive modern enterprise.</p>
-</div>
-<div class="grid grid-cols-2 md:grid-cols-3 gap-12">
-<div class="flex flex-col gap-4">
-<h4 class="font-label-sm text-label-sm text-primary uppercase tracking-widest">Navigation</h4>
-<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-outline opacity-60 hover:opacity-100 hover:text-primary transition-all duration-500" href="#">Home</a>
-<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-outline opacity-60 hover:opacity-100 hover:text-primary transition-all duration-500" href="#">Services</a>
-<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-outline opacity-60 hover:opacity-100 hover:text-primary transition-all duration-500" href="#">Projects</a>
-<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-outline opacity-60 hover:opacity-100 hover:text-primary transition-all duration-500" href="#">About</a>
-<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-outline opacity-60 hover:opacity-100 hover:text-primary transition-all duration-500" href="#">Contact</a>
-</div>
-<div class="flex flex-col gap-4">
-<h4 class="font-label-sm text-label-sm text-primary uppercase tracking-widest">Connect</h4>
-<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-outline opacity-60 hover:opacity-100 hover:text-primary transition-all duration-500" href="#">Instagram</a>
-<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-outline opacity-60 hover:opacity-100 hover:text-primary transition-all duration-500" href="#">X (Twitter)</a>
-<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-outline opacity-60 hover:opacity-100 hover:text-primary transition-all duration-500" href="#">LinkedIn</a>
-<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-outline opacity-60 hover:opacity-100 hover:text-primary transition-all duration-500" href="#">GitHub</a>
-<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-outline opacity-60 hover:opacity-100 hover:text-primary transition-all duration-500" href="#">Discord</a>
-</div>
-<div class="flex flex-col gap-4">
-<h4 class="font-label-sm text-label-sm text-primary uppercase tracking-widest">Contact</h4>
-<p class="font-label-sm text-label-sm text-on-surface-variant opacity-60">buildhelix@gmail.com</p>
-<p class="font-label-sm text-label-sm text-on-surface-variant opacity-60">+91 90045 56455</p>
-<p class="font-label-sm text-label-sm text-on-surface-variant opacity-60">+91 93242 84726</p>
-</div>
-</div>
-</div>
-<div class="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop py-8 border-t border-outline-variant/10 flex justify-between">
-<span class="font-label-sm text-label-sm text-outline opacity-40">© 2024 HELIX SYSTEMS. ALL RIGHTS RESERVED.</span>
-</div>
-</footer>
-<script>
-        // Micro-interactions for Hero Panels
-        document.addEventListener('mousemove', (e) => {
-            const panels = document.querySelectorAll('.parallax-panel');
-            const x = (window.innerWidth / 2 - e.pageX) / 50;
-            const y = (window.innerHeight / 2 - e.pageY) / 50;
+    </head>
+    <body class="bg-background selection:bg-primary-container selection:text-on-primary-container">
+    <!-- TopAppBar -->
+    <header class="fixed top-4 left-1/2 -translate-x-1/2 w-[90%] max-w-7xl rounded-full bg-surface/10 dark:bg-surface-dim/10 backdrop-blur-xl border border-white/10 dark:border-white/5 backdrop-saturate-150 shadow-2xl flex justify-between items-center px-8 py-3 z-50 transition-all duration-300">
+    <div class="flex items-center gap-2">
+    <span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">blur_on</span>
+    <span class="font-headline-lg text-headline-lg tracking-tighter text-on-surface dark:text-on-surface-variant">HELIX</span>
+    </div>
+    <nav class="hidden md:flex items-center gap-8">
+        <a class="font-label-md text-label-md text-on-surface-variant dark:text-outline-variant hover:text-on-surface dark:hover:text-on-surface hover:scale-105 transition-all duration-300" href="#">Home</a>
+        <a class="font-label-md text-label-md text-on-surface-variant dark:text-outline-variant hover:text-on-surface dark:hover:text-on-surface hover:scale-105 transition-all duration-300" href="#">Services</a>
+        <a class="font-label-md text-label-md text-on-surface-variant dark:text-outline-variant hover:text-on-surface dark:hover:text-on-surface hover:scale-105 transition-all duration-300" href="#">Projects</a>
+        <a class="font-label-md text-label-md text-on-surface-variant dark:text-outline-variant hover:text-on-surface dark:hover:text-on-surface hover:scale-105 transition-all duration-300" href="#">About</a>
+        <a class="font-label-md text-label-md text-on-surface-variant dark:text-outline-variant hover:text-on-surface dark:hover:text-on-surface hover:scale-105 transition-all duration-300" href="#">Contact</a>
+    </nav>
+    <button class="bg-primary text-on-primary-container px-6 py-2 rounded-full font-label-md text-label-md hover:scale-105 hover:bg-white/5 transition-all duration-300 active:scale-95">
+                Book a Call
+            </button>
+    </header>
+    <main>
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex flex-col items-center justify-center pt-32 overflow-hidden px-margin-mobile md:px-margin-desktop">
+    <!-- Atmospheric Glows -->
+    <div class="absolute top-[-20%] left-[-10%] w-[60%] h-[60%] bg-primary/10 rounded-full blur-[120px] pointer-events-none"></div>
+    <div class="absolute bottom-[-20%] right-[-10%] w-[50%] h-[50%] bg-secondary-container/10 rounded-full blur-[120px] pointer-events-none"></div>
+    <div class="z-10 text-center max-w-5xl mx-auto">
+    <h1 class="font-display-2xl text-display-2xl mb-8 leading-[1] text-gradient">
+                        BUILDING DIGITAL SYSTEMS FOR MODERN BUSINESSES
+                    </h1>
+    <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto mb-12 opacity-80">
+                        Websites, automation, branding, and scalable systems designed for the next generation of businesses.
+                    </p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+    <button class="bg-primary text-on-primary font-label-md text-label-md px-10 py-4 rounded-full flex items-center gap-2 hover:scale-105 transition-all">
+                            Start Your Journey <span class="material-symbols-outlined">arrow_right_alt</span>
+    </button>
+    <button class="border border-outline-variant text-on-surface font-label-md text-label-md px-10 py-4 rounded-full backdrop-blur hover:bg-white/5 transition-all">
+                            View Portfolio
+                        </button>
+    </div>
+    </div>
+    <!-- Hero Visual: Floating Panels -->
+    <div class="relative w-full max-w-7xl h-[400px] mt-16 perspective-1000">
+    <!-- Dashboard Panel -->
+    <div class="parallax-panel absolute top-10 left-0 md:left-20 w-[300px] md:w-[450px] aspect-video glass-panel rounded-xl shadow-2xl p-4 transform rotate-3 z-30" style="transform: perspective(1000px) rotateY(10deg) rotateX(10deg);">
+    <div class="w-full h-full rounded-lg overflow-hidden bg-surface-container-high/40">
+    <img class="w-full h-full object-cover opacity-60 grayscale mix-blend-screen" data-alt="A futuristic web analytics dashboard with glowing violet charts and complex data visualizations. The interface is clean and minimalist, set against a dark glass background with sharp, glowing lines and technical readouts that evoke a high-performance digital environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDyOBHNz0RYFMWjTifx54S6DMzqrOkrN1S_llOnlqzuGcZMnjIxOG1s-ejTdWxRN50RiM21KrNsMhUY0M9A03a1CaP1IBSYAbE0KsOXX3E_WjtiAw8iNyXcCBFfjpK9J1zkk1ReyXZUFcjfWIXVBporIlR_vPsq3Uk651G3HFNbFqOudLVPsAYHVNpWcOsX2-nTE_Tm0Mjp2bnbB1mIkfpoF1WwbFjHwOYC525g3tF_pifQdimkOpuLS2l8OkEsjbNKLDwzCzo6lMC9"/>
+    </div>
+    </div>
+    <!-- Automation Flow -->
+    <div class="parallax-panel absolute bottom-10 right-0 md:right-20 w-[280px] md:w-[400px] aspect-video glass-panel rounded-xl shadow-2xl p-4 transform -rotate-2 z-40" style="transform: perspective(1000px) rotateY(-5deg) rotateX(-5deg);">
+    <div class="w-full h-full rounded-lg overflow-hidden bg-primary/5 flex items-center justify-center">
+    <div class="space-y-4 w-full px-4">
+    <div class="h-2 w-3/4 bg-primary/20 rounded"></div>
+    <div class="h-2 w-1/2 bg-outline-variant/40 rounded"></div>
+    <div class="flex justify-between">
+    <div class="w-8 h-8 rounded-full bg-primary/30"></div>
+    <div class="w-8 h-8 rounded-full bg-secondary-container/30"></div>
+    </div>
+    </div>
+    </div>
+    </div>
+    <!-- Center Brand Focal -->
+    <div class="parallax-panel absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200px] aspect-square bg-primary/10 rounded-full blur-[40px] z-20"></div>
+    </div>
+    </section>
+    <!-- Marquee Section -->
+    <section class="py-16 border-y border-outline-variant/10 bg-surface-container-lowest/50 relative overflow-hidden">
+    <div class="marquee-track flex items-center gap-16 md:gap-32">
+    <!-- Set 1 -->
+    <span class="font-display-lg text-display-lg text-outline opacity-20 tracking-tighter">REACT</span>
+    <span class="font-display-lg text-display-lg text-outline opacity-20 tracking-tighter">NEXT.JS</span>
+    <span class="font-display-lg text-display-lg text-outline opacity-20 tracking-tighter">AI SYSTEMS</span>
+    <span class="font-display-lg text-display-lg text-outline opacity-20 tracking-tighter">DIGITAL INFRASTRUCTURE</span>
+    <span class="font-display-lg text-display-lg text-outline opacity-20 tracking-tighter">UI/UX ENGINEERING</span>
+    <span class="font-display-lg text-display-lg text-outline opacity-20 tracking-tighter">AUTOMATION</span>
+    <!-- Set 2 -->
+    <span class="font-display-lg text-display-lg text-outline opacity-20 tracking-tighter">REACT</span>
+    <span class="font-display-lg text-display-lg text-outline opacity-20 tracking-tighter">NEXT.JS</span>
+    <span class="font-display-lg text-display-lg text-outline opacity-20 tracking-tighter">AI SYSTEMS</span>
+    <span class="font-display-lg text-display-lg text-outline opacity-20 tracking-tighter">DIGITAL INFRASTRUCTURE</span>
+    <span class="font-display-lg text-display-lg text-outline opacity-20 tracking-tighter">UI/UX ENGINEERING</span>
+    <span class="font-display-lg text-display-lg text-outline opacity-20 tracking-tighter">AUTOMATION</span>
+    </div>
+    </section>
+    <!-- Process Section -->
+    <section class="py-32 px-margin-mobile md:px-margin-desktop max-w-7xl mx-auto">
+    <div class="mb-24">
+    <h2 class="font-headline-lg text-headline-lg text-on-surface mb-4">OUR PROCESS</h2>
+    <div class="w-24 h-1 bg-primary"></div>
+    </div>
+    <div class="relative grid grid-cols-1 md:grid-cols-5 gap-8">
+    <!-- Timeline Connecting Line -->
+    <div class="hidden md:block absolute top-1/2 left-0 w-full h-[1px] bg-outline-variant/30 -translate-y-1/2 z-0">
+    <div class="glow-line" id="timeline-glow"></div>
+    </div>
+    <!-- Process Steps -->
+    <div class="relative z-10 flex flex-col items-center text-center group">
+    <div class="w-16 h-16 rounded-full glass-panel flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500 border-primary/20">
+    <span class="material-symbols-outlined text-primary">search</span>
+    </div>
+    <h3 class="font-label-md text-label-md mb-2 text-primary uppercase tracking-widest">Discover</h3>
+    <p class="font-body-md text-body-md text-on-surface-variant opacity-60">Deep dive into goals.</p>
+    </div>
+    <div class="relative z-10 flex flex-col items-center text-center group">
+    <div class="w-16 h-16 rounded-full glass-panel flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500">
+    <span class="material-symbols-outlined text-on-surface">pen_size_2</span>
+    </div>
+    <h3 class="font-label-md text-label-md mb-2 text-on-surface uppercase tracking-widest">Design</h3>
+    <p class="font-body-md text-body-md text-on-surface-variant opacity-60">High-fidelity vision.</p>
+    </div>
+    <div class="relative z-10 flex flex-col items-center text-center group">
+    <div class="w-16 h-16 rounded-full glass-panel flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500 border-primary/20">
+    <span class="material-symbols-outlined text-primary">code</span>
+    </div>
+    <h3 class="font-label-md text-label-md mb-2 text-primary uppercase tracking-widest">Build</h3>
+    <p class="font-body-md text-body-md text-on-surface-variant opacity-60">Pixel-perfect code.</p>
+    </div>
+    <div class="relative z-10 flex flex-col items-center text-center group">
+    <div class="w-16 h-16 rounded-full glass-panel flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500">
+    <span class="material-symbols-outlined text-on-surface">bolt</span>
+    </div>
+    <h3 class="font-label-md text-label-md mb-2 text-on-surface uppercase tracking-widest">Optimize</h3>
+    <p class="font-body-md text-body-md text-on-surface-variant opacity-60">Speed &amp; Performance.</p>
+    </div>
+    <div class="relative z-10 flex flex-col items-center text-center group">
+    <div class="w-16 h-16 rounded-full glass-panel flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500 border-primary/20">
+    <span class="material-symbols-outlined text-primary">rocket_launch</span>
+    </div>
+    <h3 class="font-label-md text-label-md mb-2 text-primary uppercase tracking-widest">Scale</h3>
+    <p class="font-body-md text-body-md text-on-surface-variant opacity-60">Future-proof growth.</p>
+    </div>
+    </div>
+    </section>
+    <!-- Contact Preview Section -->
+    <section class="py-32 px-margin-mobile md:px-margin-desktop relative overflow-hidden">
+    <div class="max-w-7xl mx-auto glass-panel rounded-xl md:rounded-lg p-16 md:p-32 text-center relative overflow-hidden group">
+    <div class="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-1000"></div>
+    <h2 class="font-display-2xl text-display-2xl mb-12 relative z-10">LET'S BUILD SOMETHING MODERN</h2>
+    <div class="relative z-10 flex flex-col md:flex-row items-center justify-center gap-8">
+    <a class="group flex items-center gap-4 text-primary font-display-lg text-display-lg hover:translate-x-4 transition-transform duration-500" href="mailto:hello@helix.systems">
+                            HELLO@HELIX.SYSTEMS
+                            <span class="material-symbols-outlined text-display-lg">north_east</span>
+    </a>
+    </div>
+    <!-- Visual Texture -->
+    <div class="absolute top-0 right-0 w-64 h-64 bg-primary/20 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2"></div>
+    <div class="absolute bottom-0 left-0 w-64 h-64 bg-secondary-container/20 rounded-full blur-[100px] translate-y-1/2 -translate-x-1/2"></div>
+    </div>
+    </section>
+    </main>
+    <!-- Footer -->
+    <footer class="w-full rounded-t-xl bg-surface-container-lowest dark:bg-surface-dim border-t border-outline-variant/20">
+    <div class="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop py-24 flex flex-col md:flex-row justify-between gap-16">
+    <div class="flex flex-col gap-8 max-w-sm">
+    <span class="font-display-2xl text-display-2xl tracking-tighter text-on-surface dark:text-on-surface">HELIX</span>
+    <p class="font-body-md text-body-md text-on-surface-variant opacity-60">Architecting the digital frontier. We build systems that drive modern enterprise.</p>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-12">
+    <div class="flex flex-col gap-4">
+    <h4 class="font-label-sm text-label-sm text-primary uppercase tracking-widest">Navigation</h4>
+    <a class="font-label-sm text-label-sm text-on-surface-variant dark:text-outline opacity-60 hover:opacity-100 hover:text-primary transition-all duration-500" href="#">Home</a>
+    <a class="font-label-sm text-label-sm text-on-surface-variant dark:text-outline opacity-60 hover:opacity-100 hover:text-primary transition-all duration-500" href="#">Services</a>
+    <a class="font-label-sm text-label-sm text-on-surface-variant dark:text-outline opacity-60 hover:opacity-100 hover:text-primary transition-all duration-500" href="#">Projects</a>
+    <a class="font-label-sm text-label-sm text-on-surface-variant dark:text-outline opacity-60 hover:opacity-100 hover:text-primary transition-all duration-500" href="#">About</a>
+    <a class="font-label-sm text-label-sm text-on-surface-variant dark:text-outline opacity-60 hover:opacity-100 hover:text-primary transition-all duration-500" href="#">Contact</a>
+    </div>
+    <div class="flex flex-col gap-4">
+    <h4 class="font-label-sm text-label-sm text-primary uppercase tracking-widest">Connect</h4>
+    <a class="font-label-sm text-label-sm text-on-surface-variant dark:text-outline opacity-60 hover:opacity-100 hover:text-primary transition-all duration-500" href="#">Instagram</a>
+    <a class="font-label-sm text-label-sm text-on-surface-variant dark:text-outline opacity-60 hover:opacity-100 hover:text-primary transition-all duration-500" href="#">X (Twitter)</a>
+    <a class="font-label-sm text-label-sm text-on-surface-variant dark:text-outline opacity-60 hover:opacity-100 hover:text-primary transition-all duration-500" href="#">LinkedIn</a>
+    <a class="font-label-sm text-label-sm text-on-surface-variant dark:text-outline opacity-60 hover:opacity-100 hover:text-primary transition-all duration-500" href="#">GitHub</a>
+    <a class="font-label-sm text-label-sm text-on-surface-variant dark:text-outline opacity-60 hover:opacity-100 hover:text-primary transition-all duration-500" href="#">Discord</a>
+    </div>
+    <div class="flex flex-col gap-4">
+    <h4 class="font-label-sm text-label-sm text-primary uppercase tracking-widest">Contact</h4>
+    <p class="font-label-sm text-label-sm text-on-surface-variant opacity-60">buildhelix@gmail.com</p>
+    <p class="font-label-sm text-label-sm text-on-surface-variant opacity-60">+91 90045 56455</p>
+    <p class="font-label-sm text-label-sm text-on-surface-variant opacity-60">+91 93242 84726</p>
+    </div>
+    </div>
+    </div>
+    <div class="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop py-8 border-t border-outline-variant/10 flex justify-between">
+    <span class="font-label-sm text-label-sm text-outline opacity-40">© 2024 HELIX SYSTEMS. ALL RIGHTS RESERVED.</span>
+    </div>
+    </footer>
+    <script>
+            // Micro-interactions for Hero Panels
+            document.addEventListener('mousemove', (e) => {
+                const panels = document.querySelectorAll('.parallax-panel');
+                const x = (window.innerWidth / 2 - e.pageX) / 50;
+                const y = (window.innerHeight / 2 - e.pageY) / 50;
 
-            panels.forEach((panel, index) => {
-                const speed = (index + 1) * 0.5;
-                panel.style.transform = `perspective(1000px) rotateY(${x * speed}deg) rotateX(${y * speed}deg) translateZ(${index * 10}px)`;
-            });
-        });
-
-        // Timeline Glow Effect
-        const timeline = document.getElementById('timeline-glow');
-        let progress = 0;
-        function animateTimeline() {
-            progress += 0.2;
-            if (progress > 100) progress = -20;
-            timeline.style.background = `linear-gradient(90deg, transparent, var(--primary) ${progress}%, transparent ${progress + 20}%)`;
-            requestAnimationFrame(animateTimeline);
-        }
-        animateTimeline();
-        
-        // Smooth Scroll implementation (basic)
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
+                panels.forEach((panel, index) => {
+                    const speed = (index + 1) * 0.5;
+                    panel.style.transform = `perspective(1000px) rotateY(${x * speed}deg) rotateX(${y * speed}deg) translateZ(${index * 10}px)`;
                 });
             });
-        });
-    </script>
-</body></html>
+
+            // Timeline Glow Effect
+            const timeline = document.getElementById('timeline-glow');
+            let progress = 0;
+            function animateTimeline() {
+                progress += 0.2;
+                if (progress > 100) progress = -20;
+                timeline.style.background = `linear-gradient(90deg, transparent, var(--primary) ${progress}%, transparent ${progress + 20}%)`;
+                requestAnimationFrame(animateTimeline);
+            }
+            animateTimeline();
+            
+            // Smooth Scroll implementation (basic)
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        </script>
+    </body></html>

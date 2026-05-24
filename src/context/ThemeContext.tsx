@@ -17,11 +17,8 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     const root = document.documentElement;
-    if (theme === "dark") {
-      root.classList.add("dark");
-    } else {
-      root.classList.remove("dark");
-    }
+    root.classList.remove("dark", "light");
+    root.classList.add(theme);
     localStorage.setItem("helix-theme", theme);
   }, [theme]);
 

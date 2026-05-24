@@ -5,8 +5,8 @@ export default function Marquee() {
   ];
 
   return (
-    <section className="py-16 border-y border-outline-variant/10 bg-surface-container-lowest/50 relative overflow-hidden">
-      <div className="flex w-max items-center gap-16 md:gap-32" style={{ animation: "marquee-scroll 40s linear infinite" }}>
+    <section className="py-12 md:py-16 border-y border-outline-variant/10 bg-surface-container-lowest/50 relative overflow-hidden">
+      <div className="flex w-max items-center gap-12 md:gap-32" style={{ animation: "marquee-scroll 40s linear infinite" }}>
         {[...items, ...items].map((item, i) => (
           <span
             key={i}

@@ -1,38 +1,50 @@
+import { motion } from "framer-motion";
+
 export default function MindsetGrid() {
   const items = [
     {
-      icon: "alt_route",
-      title: "Automation",
-      description: "Eliminating human latency by building self-correcting logic into the core of every deployment.",
-      tag: "01 / LOGIC DEPLOYMENT",
+      icon: "design_services",
+      title: "Design First",
+      description: "We believe great design is the foundation of any successful website. Every project starts with understanding your brand, your audience, and what makes you different.",
+      tag: "01 / DESIGN PHILOSOPHY",
     },
     {
-      icon: "hub",
-      title: "Scalability",
-      description: "Infrastructure that breathes. We design systems that expand laterally without compromising integrity.",
-      tag: "02 / ELASTIC ARCHITECTURE",
+      icon: "code",
+      title: "Clean Code",
+      description: "We write modern, maintainable code using tools like React, Vite, and Tailwind CSS. Our focus is on performance, responsiveness, and reliability — not unnecessary complexity.",
+      tag: "02 / TECHNICAL APPROACH",
       translate: true,
     },
     {
-      icon: "dynamic_form",
-      title: "Innovation",
-      description: "Technical precision as a catalyst for creative breakthroughs. We solve the hard problems first.",
-      tag: "03 / TECHNICAL FRONTIERS",
+      icon: "handshake",
+      title: "Client Focused",
+      description: "We keep things straightforward. Clear communication, realistic timelines, and transparent pricing. No jargon, no fluff — just honest work that delivers results.",
+      tag: "03 / HOW WE WORK",
     },
   ];
 
   return (
-    <section className="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop mb-48">
-      <div className="mb-16">
-        <h2 className="font-headline-lg text-headline-lg text-white mb-4">Our Mindset</h2>
-        <div className="h-px w-24 bg-primary" />
-      </div>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {items.map((item) => (
-          <div
+    <section className="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop mb-32 md:mb-48">
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+        className="mb-12 md:mb-16"
+      >
+        <h2 className="font-headline-lg text-headline-lg mb-3">How We Think</h2>
+        <div className="h-px w-20 bg-primary" />
+      </motion.div>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6">
+        {items.map((item, i) => (
+          <motion.div
             key={item.title}
-            className={`p-10 rounded-lg flex flex-col justify-between group ${
-              item.translate ? "md:translate-y-12" : ""
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: i * 0.12 }}
+            className={`p-8 md:p-10 rounded-lg flex flex-col justify-between group ${
+              item.translate ? "md:translate-y-8" : ""
             }`}
             style={{
               backdropFilter: "blur(24px)",
@@ -44,12 +56,12 @@ export default function MindsetGrid() {
             onMouseLeave={(e) => { e.currentTarget.style.background = "rgba(255, 255, 255, 0.03)"; }}
           >
             <div>
-              <span className="material-symbols-outlined text-primary mb-8 text-4xl block">{item.icon}</span>
-              <h3 className="font-display-lg text-display-lg text-white mb-4">{item.title}</h3>
+              <span className="material-symbols-outlined text-primary mb-6 text-3xl md:text-4xl block">{item.icon}</span>
+              <h3 className="font-display-lg text-display-lg mb-3">{item.title}</h3>
               <p className="text-on-surface-variant font-body-md opacity-80 leading-relaxed">{item.description}</p>
             </div>
-            <div className="mt-12 text-primary font-label-sm opacity-0 group-hover:opacity-100 transition-opacity">{item.tag}</div>
-          </div>
+            <div className="mt-8 md:mt-12 text-primary font-label-sm opacity-0 group-hover:opacity-100 transition-opacity">{item.tag}</div>
+          </motion.div>
         ))}
       </div>
     </section>
