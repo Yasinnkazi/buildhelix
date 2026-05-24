@@ -94,7 +94,7 @@ export default function Navbar() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.3 }}
-              className="fixed inset-0 z-30 bg-black/60 backdrop-blur-md md:hidden"
+              className="fixed inset-0 z-[60] bg-black/60 backdrop-blur-md md:hidden"
               onClick={() => setMobileOpen(false)}
             />
 
@@ -103,18 +103,23 @@ export default function Navbar() {
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: "80%" }}
               transition={{ type: "spring", damping: 28, stiffness: 260 }}
-              className="fixed inset-y-0 right-0 w-full max-w-sm z-40 md:hidden overflow-y-auto"
+              className="fixed inset-y-0 right-0 w-full max-w-sm z-[60] md:hidden overflow-y-auto"
               style={{ background: "var(--color-background, #121414)" }}
             >
               <div className="absolute inset-0 backdrop-blur-3xl" style={{ background: "var(--color-background, #121414)", opacity: 0.98 }} />
 
               <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-10 py-24">
-                {/* Close indicator */}
-                <div className="absolute top-8 right-8 w-8 h-8 rounded-full bg-white/5 flex items-center justify-center border border-white/10">
-                  <span
-                    className="material-symbols-outlined text-on-surface text-lg cursor-pointer"
-                    onClick={() => setMobileOpen(false)}
-                  >
+                {/* Close button */}
+                <div
+                  className="absolute top-6 right-6 w-10 h-10 rounded-full flex items-center justify-center cursor-pointer transition-all duration-300 hover:bg-white/10 active:scale-90 z-20"
+                  style={{
+                    backdropFilter: "blur(16px)",
+                    background: "var(--glass-bg, rgba(255,255,255,0.03))",
+                    border: "1px solid var(--glass-border, rgba(255,255,255,0.1))",
+                  }}
+                  onClick={() => setMobileOpen(false)}
+                >
+                  <span className="material-symbols-outlined text-on-surface text-xl">
                     close
                   </span>
                 </div>

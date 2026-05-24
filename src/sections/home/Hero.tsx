@@ -8,7 +8,9 @@ export default function Hero() {
       <div className="absolute bottom-[-20%] right-[-10%] w-[50%] h-[50%] bg-secondary-container/10 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="z-10 text-center max-w-5xl mx-auto">
-        <h1 className="font-display-2xl text-display-2xl mb-8 leading-[1.15] text-gradient tracking-tight">
+        <h1 className="font-display-2xl text-display-2xl mb-8 leading-[1.15] text-gradient tracking-tight"
+            style={{ fontSize: "clamp(30px, 8vw, 72px)" }}
+        >
           BUILDING DIGITAL SYSTEMS<br />
           FOR MODERN BUSINESSES
         </h1>
