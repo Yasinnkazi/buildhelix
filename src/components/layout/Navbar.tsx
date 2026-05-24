@@ -24,68 +24,71 @@ export default function Navbar() {
   }, [mobileOpen]);
 
   return (
-    <header
-      className={`fixed left-1/2 -translate-x-1/2 z-50 transition-all duration-300
-        ${scrolled
-          ? "top-0 w-full rounded-none bg-background/75 backdrop-blur-xl"
-          : "top-4 w-[92%] sm:w-[90%] max-w-7xl rounded-full bg-background/15 backdrop-blur-xl border border-white/10 backdrop-saturate-150 shadow-2xl"
-        }
-        flex justify-between items-center px-5 md:px-8 py-3`}
-    >
-      <Link to="/" className="flex items-center gap-2 group z-50">
-        <span className="material-symbols-outlined text-primary transition-transform duration-300 group-hover:scale-110" style={{ fontVariationSettings: "'FILL' 1" }}>
-          blur_on
-        </span>
-        <span className="font-headline-lg text-headline-lg tracking-tighter">
-          HELIX
-        </span>
-      </Link>
-
-      <nav className="hidden md:flex items-center gap-8">
-        {NAV_ITEMS.map((item) => {
-          const isActive = location.pathname === item.path;
-          return (
-            <Link
-              key={item.path}
-              to={item.path}
-              className={`relative font-label-md text-label-md transition-all duration-300 py-1 ${
-                isActive
-                  ? "text-primary"
-                  : "text-on-surface-variant hover:text-on-surface"
-              }`}
-            >
-              {item.label}
-              {isActive && (
-                <motion.span
-                  layoutId="nav-underline"
-                  className="absolute -bottom-0.5 left-0 right-0 h-px bg-primary"
-                  transition={{ type: "spring", stiffness: 380, damping: 30 }}
-                />
-              )}
-            </Link>
-          );
-        })}
-      </nav>
-
-      <button
-        onClick={() => setMobileOpen(!mobileOpen)}
-        className="md:hidden relative z-50 flex items-center justify-center w-10 h-10 rounded-full bg-white/5 backdrop-blur border border-white/10 hover:bg-white/10 transition-all duration-300"
-        aria-label={mobileOpen ? "Close menu" : "Open menu"}
+    <>
+      <header
+        className={`fixed left-1/2 -translate-x-1/2 z-40 transition-all duration-300
+          ${scrolled
+            ? "top-0 w-full rounded-none bg-background/75 backdrop-blur-xl"
+            : "top-4 w-[92%] sm:w-[90%] max-w-7xl rounded-full bg-background/15 backdrop-blur-xl border border-white/10 backdrop-saturate-150 shadow-2xl"
+          }
+          flex justify-between items-center px-5 md:px-8 py-3`}
       >
-        <div className="flex flex-col items-center justify-center gap-[5px]">
-          <span className={`block w-[18px] h-[1.5px] bg-on-surface rounded-full transition-all duration-300 ${mobileOpen ? "rotate-45 translate-y-[6.5px]" : ""}`} />
-          <span className={`block w-[18px] h-[1.5px] bg-on-surface rounded-full transition-all duration-300 ${mobileOpen ? "opacity-0" : ""}`} />
-          <span className={`block w-[18px] h-[1.5px] bg-on-surface rounded-full transition-all duration-300 ${mobileOpen ? "-rotate-45 -translate-y-[6.5px]" : ""}`} />
-        </div>
-      </button>
+        <Link to="/" className="flex items-center gap-2 group z-40">
+          <span className="material-symbols-outlined text-primary transition-transform duration-300 group-hover:scale-110" style={{ fontVariationSettings: "'FILL' 1" }}>
+            blur_on
+          </span>
+          <span className="font-headline-lg text-headline-lg tracking-tighter">
+            HELIX
+          </span>
+        </Link>
 
-      <Link
-        to="/contact"
-        className="hidden md:inline-flex bg-primary text-on-primary-container px-6 py-2.5 rounded-full font-label-md text-label-md hover:scale-[1.02] active:scale-95 transition-all duration-300 shadow-lg shadow-primary/20"
-      >
-        Book a Call
-      </Link>
+        <nav className="hidden md:flex items-center gap-8">
+          {NAV_ITEMS.map((item) => {
+            const isActive = location.pathname === item.path;
+            return (
+              <Link
+                key={item.path}
+                to={item.path}
+                className={`relative font-label-md text-label-md transition-all duration-300 py-1 ${
+                  isActive
+                    ? "text-primary"
+                    : "text-on-surface-variant hover:text-on-surface"
+                }`}
+              >
+                {item.label}
+                {isActive && (
+                  <motion.span
+                    layoutId="nav-underline"
+                    className="absolute -bottom-0.5 left-0 right-0 h-px bg-primary"
+                    transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                  />
+                )}
+              </Link>
+            );
+          })}
+        </nav>
 
+        <button
+          onClick={() => setMobileOpen(!mobileOpen)}
+          className="md:hidden relative z-40 flex items-center justify-center w-10 h-10 rounded-full bg-white/5 backdrop-blur border border-white/10 hover:bg-white/10 transition-all duration-300"
+          aria-label={mobileOpen ? "Close menu" : "Open menu"}
+        >
+          <div className="flex flex-col items-center justify-center gap-[5px]">
+            <span className={`block w-[18px] h-[1.5px] bg-on-surface rounded-full transition-all duration-300 ${mobileOpen ? "rotate-45 translate-y-[6.5px]" : ""}`} />
+            <span className={`block w-[18px] h-[1.5px] bg-on-surface rounded-full transition-all duration-300 ${mobileOpen ? "opacity-0" : ""}`} />
+            <span className={`block w-[18px] h-[1.5px] bg-on-surface rounded-full transition-all duration-300 ${mobileOpen ? "-rotate-45 -translate-y-[6.5px]" : ""}`} />
+          </div>
+        </button>
+
+        <Link
+          to="/contact"
+          className="hidden md:inline-flex bg-primary text-on-primary-container px-6 py-2.5 rounded-full font-label-md text-label-md hover:scale-[1.02] active:scale-95 transition-all duration-300 shadow-lg shadow-primary/20"
+        >
+          Book a Call
+        </Link>
+      </header>
+
+      {/* Mobile drawer — rendered outside <header> to avoid transform/stacking-context clipping */}
       <AnimatePresence>
         {mobileOpen && (
           <>
@@ -94,7 +97,7 @@ export default function Navbar() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.3 }}
-              className="fixed inset-0 z-[60] bg-black/60 backdrop-blur-md md:hidden"
+              className="fixed inset-0 z-50 bg-black/60 backdrop-blur-md md:hidden"
               onClick={() => setMobileOpen(false)}
             />
 
@@ -168,6 +171,6 @@ export default function Navbar() {
           </>
         )}
       </AnimatePresence>
-    </header>
+    </>
   );
 }
