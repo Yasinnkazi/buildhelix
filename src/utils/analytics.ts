@@ -127,6 +127,16 @@ export function trackTimeOnPage(seconds: number) {
   }
 }
 
+export function trackBookingCall(label?: string) {
+  if (typeof window.gtag === "function") {
+    window.gtag("event", "booking_call", {
+      event_category: "conversion",
+      event_label: label || "book_a_call",
+      value: 1,
+    });
+  }
+}
+
 export function initTimeTracking() {
   const intervals = [30, 60, 120, 180, 300];
   const timers: number[] = [];

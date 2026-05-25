@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import MockupUI from "../../components/ui/MockupUI";
 
 export default function Hero() {
   return (
@@ -46,11 +47,9 @@ export default function Hero() {
             className="p-8 rounded-lg aspect-square flex items-center justify-center relative group overflow-hidden"
             style={{ backdropFilter: "blur(24px)", background: "rgba(255, 255, 255, 0.03)", border: "1px solid rgba(255, 255, 255, 0.1)" }}
           >
-            <img
-              className="w-full h-full object-contain opacity-60 group-hover:scale-110 transition-transform duration-700"
-              alt="Abstract shape representing HELIX design philosophy"
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCt-nKxypIZFp0bDcdI4EGraGqdPjzCdjN6N8FrMm1eOApu-UJ3KpmYt3sijFVn8-Rs0asmYFneb5pUeIwdKBRq3vPABFx-_NI1FpyDQlYBdazrNs4VDJlFOLRfAK_hPw0oCHY_s0BQkGAJ4zknzXa_JQ70XC9NMPSX1181TCLm1HqrFMHVEA7tVkdPHhlpvQeXqejc49gP_YuvyYrlfnhejqk6oVj0Kk-lvkgj-opedtJaOM9aOIEuW1CEg66JoYlvuKh4KCwAJ3-W"
-            />
+            <div className="w-full h-full">
+              <MockupUI variant="about-helix" />
+            </div>
             <div className="absolute inset-0 bg-gradient-to-t from-surface-dim via-transparent to-transparent opacity-40" />
           </motion.div>
         </div>

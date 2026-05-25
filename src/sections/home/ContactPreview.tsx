@@ -23,6 +23,9 @@ export default function ContactPreview() {
       >
         <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-1000 pointer-events-none" />
 
+        <p className="font-label-sm text-label-sm text-outline/60 mb-4 relative z-10">
+          Projects starting from ₹15,000
+        </p>
         <h2 className="font-display-2xl text-display-2xl mb-12 relative z-10 leading-tight">
           LET'S BUILD SOMETHING MODERN
         </h2>

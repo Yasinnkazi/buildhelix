@@ -1,6 +1,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { PROJECTS } from "../../data/projects";
+import MockupUI from "../../components/ui/MockupUI";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -29,14 +30,8 @@ function BrowserFrame({ project }: { project: (typeof PROJECTS)[number] }) {
         <span className="browser-dot" style={{ background: "#27C93F" }} />
         <span className="browser-url">{project.liveUrl.replace("https://", "")}</span>
       </div>
-      <div className="relative aspect-video overflow-hidden bg-surface-container-high">
-        <img
-          src={project.image}
-          alt={`${project.title} website preview`}
-          loading="lazy"
-          className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105"
-          style={{ filter: "grayscale(30%)" }}
-        />
+      <div className="relative aspect-video overflow-hidden">
+        <MockupUI variant={project.id as any} />
         <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
       </div>
     </div>

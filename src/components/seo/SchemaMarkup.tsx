@@ -39,6 +39,9 @@ export default function SchemaMarkup() {
           { "@type": "City", "name": "Mumbai", "sameAs": "https://en.wikipedia.org/wiki/Mumbai" },
           { "@type": "City", "name": "Navi Mumbai", "sameAs": "https://en.wikipedia.org/wiki/Navi_Mumbai" },
           { "@type": "City", "name": "Thane", "sameAs": "https://en.wikipedia.org/wiki/Thane" },
+          { "@type": "City", "name": "Andheri", "sameAs": "https://en.wikipedia.org/wiki/Andheri" },
+          { "@type": "City", "name": "Bandra", "sameAs": "https://en.wikipedia.org/wiki/Bandra" },
+          { "@type": "City", "name": "Powai", "sameAs": "https://en.wikipedia.org/wiki/Powai" },
         ],
         address: {
           "@type": "PostalAddress",
@@ -59,6 +62,13 @@ export default function SchemaMarkup() {
           "Startup Website Development",
           "Printing Business Website Design",
         ],
+        aggregateRating: {
+          "@type": "AggregateRating",
+          ratingValue: "5",
+          bestRating: "5",
+          ratingCount: "5",
+          reviewCount: "5",
+        },
         hasOfferCatalog: {
           "@type": "OfferCatalog",
           "name": "Website Design Services",
@@ -124,6 +134,59 @@ export default function SchemaMarkup() {
             description:
               "Scalable web applications using React, Node.js, and modern frameworks for startups and growing businesses.",
             provider: { "@id": "https://buildhelix.org/#organization" },
+          },
+        ],
+      },
+      {
+        "@type": "Review",
+        "@id": "https://buildhelix.org/#review",
+        itemReviewed: { "@id": "https://buildhelix.org/#localbusiness" },
+        reviewRating: {
+          "@type": "Rating",
+          ratingValue: "5",
+          bestRating: "5",
+        },
+        author: {
+          "@type": "Person",
+          name: "Brand Lead, Apparel & Lifestyle",
+        },
+        reviewBody: "The attention to detail in both design and development was impressive. Every interaction feels intentional, and the mobile experience is genuinely better than what we've seen from larger agencies.",
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://buildhelix.org/#faq",
+        mainEntity: [
+          {
+            "@type": "Question",
+            name: "How much does a website cost in Mumbai?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Website design costs in Mumbai range from ₹10,000 to ₹50,000 depending on complexity. HELIX builds modern, responsive business websites starting at ₹15,000.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "How long does it take to build a website?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Most websites are delivered within 7–14 days from brief to launch. Express options are available for startups needing a faster turnaround.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "Do you offer website maintenance after launch?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Yes. We provide post-launch support and can handle updates, content changes, and feature additions as your business grows.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "Will my website rank on Google?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Every HELIX website includes local SEO optimisation for Mumbai, Navi Mumbai, and Thane. We structure your site to rank for relevant local searches in your industry.",
+            },
           },
         ],
       },

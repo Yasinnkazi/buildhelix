@@ -6,6 +6,8 @@ import Process from "../sections/home/Process";
 import ContactPreview from "../sections/home/ContactPreview";
 import FeaturedProjects from "../sections/home/FeaturedProjects";
 import Stats from "../sections/home/Stats";
+import Testimonials from "../sections/shared/Testimonials";
+import TrustBar from "../sections/shared/TrustBar";
 
 export default function Home() {
   useEffect(() => {
@@ -33,8 +35,10 @@ export default function Home() {
       <Hero />
       <Stats />
       <FeaturedProjects />
+      <Testimonials />
       <Marquee />
       <Process />
+      <TrustBar />
       <ContactPreview />
     </>
   );

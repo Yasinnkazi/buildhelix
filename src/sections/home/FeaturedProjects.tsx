@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { PROJECTS } from "../../data/projects";
+import MockupUI from "../../components/ui/MockupUI";
 
 export default function FeaturedProjects() {
   const featured = PROJECTS.slice(0, 3);
@@ -57,13 +58,7 @@ export default function FeaturedProjects() {
             />
 
             <div className="relative h-44 sm:h-48 md:h-56 overflow-hidden">
-              <img
-                src={project.image}
-                alt={`${project.title} preview`}
-                loading="lazy"
-                className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105"
-                style={{ filter: "grayscale(30%)" }}
-              />
+              <MockupUI variant={project.id as any} className="transition-all duration-700 group-hover:scale-105" />
               <div className="absolute inset-0 bg-gradient-to-t from-background via-background/10 to-transparent" />
               <div className="absolute bottom-0 left-0 w-full p-5">
                 <span

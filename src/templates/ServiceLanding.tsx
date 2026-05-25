@@ -1,7 +1,11 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import SEO from "../components/seo/SEO";
+import FAQ from "../sections/shared/FAQ";
+import MockupUI from "../components/ui/MockupUI";
 import { PROJECTS } from "../data/projects";
+import { LANDING_FAQ } from "../data/landingPages";
+import { INSIGHTS } from "../data/insights";
 import type { LandingPageContent } from "../data/landingPages";
 
 const WHATSAPP_NUMBER = "919004556455";
@@ -209,6 +213,74 @@ export default function ServiceLanding({ content }: { content: LandingPageConten
         </div>
       </section>
 
+      {/* FAQ */}
+      {LANDING_FAQ[content.slug] && (
+        <FAQ
+          items={LANDING_FAQ[content.slug]}
+          subtitle="Common Questions"
+          title={`${content.targetIndustry} website questions, answered.`}
+        />
+      )}
+
+      {/* Related Insights */}
+      {(() => {
+        const related = INSIGHTS.filter(
+          (a) => a.slug !== content.slug && a.category !== content.targetIndustry
+        ).slice(0, 2);
+        if (related.length === 0) return null;
+        return (
+          <section className="py-24 md:py-32 max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="mb-12"
+            >
+              <span className="font-label-sm text-label-sm text-primary uppercase tracking-[0.2em] block mb-4">
+                Learn More
+              </span>
+              <h2 className="font-display-lg text-display-lg md:font-display-2xl md:text-display-2xl tracking-tighter">
+                Related insights
+              </h2>
+            </motion.div>
+            <div className="grid md:grid-cols-2 gap-6">
+              {related.map((article, i) => (
+                <motion.div
+                  key={article.slug}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: i * 0.1 }}
+                >
+                  <Link
+                    to={`/insights/${article.slug}`}
+                    className="block p-6 md:p-8 rounded-2xl transition-all duration-300 h-full"
+                    style={{
+                      backdropFilter: "blur(24px)",
+                      background: "rgba(255, 255, 255, 0.03)",
+                      border: "1px solid rgba(255, 255, 255, 0.08)",
+                    }}
+                  >
+                    <span className="font-label-sm text-label-sm text-primary/60 uppercase tracking-wider">
+                      {article.category}
+                    </span>
+                    <h3 className="font-display-md text-display-md mt-2 mb-2">{article.title}</h3>
+                    <p className="font-body-md text-body-md text-on-surface-variant/70 leading-relaxed line-clamp-2">
+                      {article.description}
+                    </p>
+                    <span className="inline-flex items-center gap-1 font-label-sm text-label-sm text-primary mt-4">
+                      Read more
+                      <span className="material-symbols-outlined text-[16px]">arrow_forward</span>
+                    </span>
+                  </Link>
+                </motion.div>
+              ))}
+            </div>
+          </section>
+        );
+      })()}
+
       {/* Case Study Reference */}
       {relatedProject && (
         <section className="py-24 md:py-32 max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop">
@@ -258,15 +330,7 @@ export default function ServiceLanding({ content }: { content: LandingPageConten
                 </div>
               </div>
               <div className="md:w-80 lg:w-96 h-48 md:h-auto relative overflow-hidden">
-                {relatedProject.image && (
-                  <img
-                    src={relatedProject.image}
-                    alt={`${relatedProject.title} website preview`}
-                    loading="lazy"
-                    className="w-full h-full object-cover"
-                    style={{ filter: "grayscale(30%)" }}
-                  />
-                )}
+                <MockupUI variant={relatedProject.id as any} />
                 <div className="absolute inset-0 bg-gradient-to-l from-background/80 via-background/40 to-transparent" />
               </div>
             </div>
@@ -288,9 +352,12 @@ export default function ServiceLanding({ content }: { content: LandingPageConten
             <h2 className="font-display-2xl text-display-2xl mb-6 tracking-tighter leading-tight">
               READY TO START?
             </h2>
-            <p className="font-body-md text-body-md text-on-surface-variant/70 max-w-lg mx-auto mb-10 leading-relaxed">
+            <p className="font-body-md text-body-md text-on-surface-variant/70 max-w-lg mx-auto mb-2 leading-relaxed">
               Tell us about your project. We'll respond within 24 hours with a
               clear timeline and estimate.
+            </p>
+            <p className="font-label-sm text-label-sm text-outline/60 mb-10">
+              Projects starting from ₹15,000
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link

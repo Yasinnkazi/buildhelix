@@ -17,6 +17,8 @@ export interface LandingPageContent {
   ctaText: string;
 }
 
+import type { FAQItem } from "../sections/shared/FAQ";
+
 export const LANDING_PAGES: LandingPageContent[] = [
   {
     slug: "gym-websites-mumbai",
@@ -344,3 +346,41 @@ export const LANDING_PAGES: LandingPageContent[] = [
     ctaText: "Build Your Printing Website",
   },
 ];
+
+export const LANDING_FAQ: Record<string, FAQItem[]> = {
+  "gym-websites-mumbai": [
+    { q: "How much does a gym website cost in Mumbai?", a: "Gym websites from HELIX start at ₹15,000 and typically range ₹15,000–₹35,000 depending on features like class scheduling, trainer profiles, and membership pages. We'll provide a clear quote after understanding your gym's requirements." },
+    { q: "How long does it take to build a gym website?", a: "Most gym websites are delivered within 7–14 days from brief to launch. We work in focused sprints — brand discovery, design, build, and deployment — so you're live and attracting members quickly." },
+    { q: "Will my gym website rank on Google?", a: "Yes. Every gym website we build includes local SEO optimisation for Mumbai, Navi Mumbai, and Thane. We structure your site to rank for 'gym near me', 'best gym in [area]', and related fitness searches." },
+    { q: "Can members book classes through the website?", a: "Absolutely. We integrate class schedule displays and booking inquiry forms so potential members can check timings, see trainer availability, and request trial sessions directly from their phone." },
+    { q: "Do I need a website if I already have Instagram?", a: "Instagram is great for awareness, but you don't own it. A website is your gym's permanent home on the internet — discoverable on Google 24/7, not subject to algorithm changes, and trusted more by potential members." },
+  ],
+  "restaurant-website-design": [
+    { q: "How much does a restaurant website cost in Mumbai?", a: "Restaurant websites start at ₹15,000 and typically range ₹15,000–₹35,000 based on menu complexity, gallery size, and reservation integration. We'll tailor a quote to your restaurant's specific needs." },
+    { q: "How long does it take to design a restaurant website?", a: "Most restaurant websites go live within 7–14 days. We prioritise your menu and photography first, then build the reservation flow and gallery around them." },
+    { q: "Can customers make reservations through the website?", a: "Yes. We design reservation flows that connect to your phone or preferred booking system. Customers can check availability and book a table anytime, from any device." },
+    { q: "Will my restaurant website show up in local searches?", a: "Every restaurant site we build includes local SEO for Mumbai, targeting searches like 'best restaurant in Bandra', 'cafe in Powai', and 'restaurants near me'. This helps new diners discover your restaurant." },
+    { q: "What information should I include on my restaurant website?", a: "The essentials: your menu (especially dietary tags and pricing), high-quality food and interior photos, location with Google Maps, operating hours, and a clear reservation or contact path." },
+  ],
+  "apparel-brand-websites": [
+    { q: "How much does an apparel brand website cost?", a: "Apparel websites start at ₹15,000 and range ₹15,000–₹40,000 based on catalogue size, product variants, and B2B inquiry workflows. We'll provide a detailed quote after reviewing your collection." },
+    { q: "How long does it take to build an apparel website?", a: "Typically 7–14 days. The timeline depends on catalogue size and product photography readiness. We optimise for mobile-first browsing and quick product discovery." },
+    { q: "Can customers browse and inquire in bulk?", a: "Yes. We build B2B-friendly inquiry systems where wholesale buyers, event planners, and corporate clients can specify quantities, sizes, and customisation requirements without a complicated checkout." },
+    { q: "Do you integrate with inventory or payment systems?", a: "For brands that need e-commerce, we can integrate payment gateways and inventory tracking. For catalogue-first brands, we optimise the inquiry-to-quote flow as the primary conversion path." },
+    { q: "How is an apparel brand website different from a standard site?", a: "Apparel websites are visual-first — high-res product galleries, colour variants, collection organisation, and brand storytelling take priority. Every design decision supports the shopping or inquiry experience." },
+  ],
+  "startup-websites-mumbai": [
+    { q: "How much does a startup website cost in Mumbai?", a: "Startup websites start at ₹15,000 and range ₹15,000–₹45,000 depending on page count, interactivity, and complexity. We offer express launches starting from ₹10,000 for early-stage MVPs." },
+    { q: "How fast can you launch my startup website?", a: "Our express launch option delivers a polished, investor-ready website in as little as 7 days. Standard builds take 7–14 days with more custom design and content development." },
+    { q: "Will the website scale as my startup grows?", a: "Absolutely. We build with React and component-based design systems. Adding pages, features, a blog, or an investor deck doesn't require rebuilding — it's designed to grow with you." },
+    { q: "Do you design for investor presentations?", a: "Yes. We build startup websites that serve both customers and investors. Clean, professional design, clear value propositions, team credibility signals, and traction indicators — everything an investor looks for." },
+    { q: "What if I need to iterate after launch?", a: "Our modular approach makes post-launch iterations fast. Need to update messaging, add a feature page, or A/B test a CTA? We can make changes in hours, not weeks." },
+  ],
+  "printing-business-websites": [
+    { q: "How much does a printing business website cost?", a: "Printing business websites start at ₹15,000 and range ₹15,000–₹35,000 based on service catalogue size, portfolio galleries, and quote request system complexity." },
+    { q: "How long does it take to build a printing website?", a: "Most printing business websites launch within 7–14 days. We prioritise your service catalogue and quote request flow so you start receiving inquiries as soon as possible." },
+    { q: "Can customers submit printing requests through the website?", a: "Yes. We build streamlined quote request forms that collect quantities, sizes, colours, deadlines, and file uploads. Every inquiry lands in your inbox ready to quote with all details included." },
+    { q: "Will my printing business appear in local Google searches?", a: "Every printing site includes local SEO targeting Mumbai, Navi Mumbai, and Thane. We optimise for 'printing press near me', 'DTF printing Mumbai', 'custom t-shirt printing', and related search terms." },
+    { q: "What services should I feature on my printing website?", a: "List every service you offer — DTF printing, screen printing, sublimation, embroidery, large format, signage. Clear service pages with capability descriptions and sample images help customers self-qualify before contacting you." },
+  ],
+};

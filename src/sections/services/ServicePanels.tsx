@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import MockupUI from "../../components/ui/MockupUI";
 
 const services = [
   {
@@ -9,8 +10,7 @@ const services = [
       "Modern, responsive websites built with React, Vite, and Tailwind CSS. We build websites for restaurants, gyms, apparel brands, and local businesses across Mumbai — with clean code, smooth animations, and performance that converts.",
     tags: ["React", "Vite", "Framer Motion", "Tailwind CSS", "Responsive"],
     reverse: false,
-    image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuCWocGdjcBKVZ-6-f_hqHA49PPm-TDtNaqOartnmKBlal10fPrOsm6OC2ET-a2ONMJL2Tfmp3c3tz0LeKMgy7Q5xjNyER3hiDPeb27JJcVx5GMGp53bLa3kucDSh_joP309DXSnKFgA4QCfiswcvhVF46okAV3oaWgHfLufVIW9efIG1Hr8Bn12ng41zf-no5XMyMtiUeaV3DN6bbG9Rzq2JZYqGEHKSlgLRI5_56LzBLLMFtvPi-o-RzcoOYDjWuFaqHqTgMaYlHqu",
+    mockup: "dev-tools" as const,
   },
   {
     id: "02",
@@ -20,8 +20,7 @@ const services = [
       "Help your business get found by customers in Mumbai, Navi Mumbai, and Thane. We optimize Google Business profiles, improve local search rankings, and make sure nearby customers can find you when it matters most.",
     tags: ["Google Business", "Local SEO", "Mumbai", "Search Presence"],
     reverse: true,
-    image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuDLk9hFbLPW6f5CVNE5y77j3L2yCXdm5bvHrTitCJqHYwTSRg102BH1c3gqkfYsTERBF35MLPBuxU6MRttVDG0zR7GesV1sg_RaAFFG6ki4wc9U9NPYq697ZqxSBhJiQa7zMyWDJNf25kKx2d5AIm7WQbo0ZFaORBDXIKtk490daqVHlEs_-aQlMoMF1NkfMmMvBfrgWN62is0Qn8v_3VKHsKdXKd2Xe4TESLpHwyQNbC04DiTLfsowKNZr-apVWrl0lK8CcUV63EzF",
+    mockup: "seo-local" as const,
   },
   {
     id: "03",
@@ -31,8 +30,7 @@ const services = [
       "We design interfaces that look good and feel right. From wireframes to high-fidelity mockups, every design decision is made with your brand identity and user experience in mind — helping Mumbai businesses stand out online.",
     tags: ["UI Design", "UX Strategy", "Brand Identity", "Prototyping"],
     reverse: false,
-    image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuA3HyuCoWmVhFy3080Qi1rhYHF2xqEhn7vEM02XbJ_U9e50Mh0esM1sF60ePeGMuXgrYK3guAfs-lC79NCAG6PEZtJFOOpZ9Wg8Ti28YcKBiFvvmsDmJWRy6NyzxnQukdzkp3GWbvgc9KlCnfQSzzd1ZLYTBNMzIqM9Pllup7buH1KCF4dgfSRqqCe1202PXzNJWvd9blpw6c4OrzaziYqzWWI7RORuqwR2d91ps6vA4Hn09nd7plAmZ6y7YQZMwTiKp8S0CsfrUDvC",
+    mockup: "ui-design" as const,
   },
   {
     id: "04",
@@ -42,8 +40,7 @@ const services = [
       "We build cohesive brand identities — logos, color palettes, typography, and visual guidelines that create a consistent presence across your website, social media, and marketing materials. Perfect for startups and growing brands.",
     tags: ["Visual Identity", "Logo Design", "Brand Guidelines"],
     reverse: true,
-    image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuCElylEyULpdkgp6-E9j3i6xHuuGg3pfcXznEH22fjK8iy8NFhZ35l6poRdpFjEfRrMRo4EBm6bPwwtgtROGgbequ2w5MKf4us9yFkEI2TtjKf1u95ZfL2COjm5CNEoCjsZX8M5zHY2kNrUajGfMz1GqXPtAe12IQgbVAo8HnHn_dmzsYJo7MoCIAc--2uqT2TjBZqwsrkPF7Vk6K7XXiVR1POwyaxUuPniAEfrAhgCtvfUtF8MBJiFm4W6cxMR0PJ8BiGRTCWy0xXh",
+    mockup: "brand-system" as const,
   },
   {
     id: "05",
@@ -53,8 +50,7 @@ const services = [
       "Reliable hosting setup, domain management, and ongoing maintenance so your website stays fast, secure, and up-to-date. We handle the technical side so you can focus on running your business in Mumbai.",
     tags: ["Hosting", "Domain Setup", "Maintenance", "Performance"],
     reverse: false,
-    image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuBQzwO7VtsdmAgFrnis40gxZpdIE2On0DD8BOOFlgq8m9H1m68JF0OQFIonmZtJXdpxtYdix9M_7URmy1BV2Ub6IBVjTlCJfG0fM5plE714mvMk_U4wrIflNdWrb1P9aW17Fs53_Pc58hJFxyH5n7cWQrmshSCfJokJZnufANuNp3BZOOKAG3G5j_nUZBEcDcU6raSHcz35WIC8rJAGNsrhx-3ZLsir-0QGXFfU6TpK3-cLOeeOPkcTje2trFyulz9b3NyZKQlFsAKY",
+    mockup: "hosting" as const,
   },
 ];
 
@@ -105,12 +101,7 @@ export default function ServicePanels() {
             </div>
 
             <div className={`w-full md:flex-1 h-48 md:h-[350px] rounded-lg overflow-hidden border border-white/5 ${service.reverse ? "md:order-1" : ""}`}>
-              <img
-                src={service.image}
-                alt={`${service.title} — HELIX portfolio preview`}
-                loading="lazy"
-                className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-110 group-hover:scale-100"
-              />
+              <MockupUI variant={service.mockup} className="scale-110 group-hover:scale-100 transition-all duration-700" />
             </div>
           </div>
         </motion.div>

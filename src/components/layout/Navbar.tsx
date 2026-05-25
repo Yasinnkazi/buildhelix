@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { NAV_ITEMS } from "../../constants/navigation";
+import { trackBookingCall } from "../../utils/analytics";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -82,11 +83,7 @@ export default function Navbar() {
 
         <Link
           to="/contact"
-          onClick={() => {
-            if (typeof window !== "undefined" && (window as any).gtag) {
-              (window as any).gtag("event", "cta_click", { event_category: "conversion", event_label: "navbar_book_a_call", value: 1 });
-            }
-          }}
+          onClick={() => trackBookingCall("navbar_book_a_call")}
           className="hidden md:inline-flex bg-primary text-on-primary-container px-6 py-2.5 rounded-full font-label-md text-label-md hover:scale-[1.02] active:scale-95 transition-all duration-300 shadow-lg shadow-primary/20"
         >
           Book a Call
@@ -168,9 +165,7 @@ export default function Navbar() {
                     className="inline-flex bg-primary text-on-primary-container px-12 py-4 rounded-full font-label-md text-label-md hover:scale-[1.02] active:scale-95 transition-all duration-300 shadow-lg shadow-primary/20"
                     onClick={() => {
                       setMobileOpen(false);
-                      if (typeof window !== "undefined" && (window as any).gtag) {
-                        (window as any).gtag("event", "cta_click", { event_category: "conversion", event_label: "drawer_book_a_call", value: 1 });
-                      }
+                      trackBookingCall("drawer_book_a_call");
                     }}
                   >
                     Book a Call

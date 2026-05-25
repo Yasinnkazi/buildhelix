@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import MockupUI from "../../components/ui/MockupUI";
 
 export default function Hero() {
   return (
@@ -14,9 +15,23 @@ export default function Hero() {
           BUILDING DIGITAL SYSTEMS<br />
           FOR MODERN BUSINESSES
         </h1>
-        <p className="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto mb-12 opacity-80">
+        <p className="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto mb-8 opacity-80">
           Websites, automation, branding, and scalable systems designed for the next generation of businesses.
         </p>
+        <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 mb-12">
+          <span className="font-label-sm text-label-sm text-outline/60 tracking-wider flex items-center gap-1.5">
+            <span className="w-1 h-1 rounded-full bg-primary/60" />
+            Mumbai-Based Studio
+          </span>
+          <span className="font-label-sm text-label-sm text-outline/60 tracking-wider flex items-center gap-1.5">
+            <span className="w-1 h-1 rounded-full bg-primary/60" />
+            Modern React Architecture
+          </span>
+          <span className="font-label-sm text-label-sm text-outline/60 tracking-wider flex items-center gap-1.5">
+            <span className="w-1 h-1 rounded-full bg-primary/60" />
+            Performance Optimised
+          </span>
+        </div>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link
             to="/contact"
@@ -47,11 +62,7 @@ export default function Hero() {
           }}
         >
           <div className="w-full h-full rounded-lg overflow-hidden bg-surface-container-high/40">
-            <img
-              className="w-full h-full object-cover opacity-60 grayscale mix-blend-screen"
-              alt="HELIX website design dashboard preview — modern business website showcase"
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDyOBHNz0RYFMWjTifx54S6DMzqrOkrN1S_llOnlqzuGcZMnjIxOG1s-ejTdWxRN50RiM21KrNsMhUY0M9A03a1CaP1IBSYAbE0KsOXX3E_WjtiAw8iNyXcCBFfjpK9J1zkk1ReyXZUFcjfWIXVBporIlR_vPsq3Uk651G3HFNbFqOudLVPsAYHVNpWcOsX2-nTE_Tm0Mjp2bnbB1mIkfpoF1WwbFjHwOYC525g3tF_pifQdimkOpuLS2l8OkEsjbNKLDwzCzo6lMC9"
-            />
+            <MockupUI variant="dashboard-hero" />
           </div>
         </div>
 
@@ -63,15 +74,8 @@ export default function Hero() {
             border: "1px solid rgba(255, 255, 255, 0.08)",
           }}
         >
-          <div className="w-full h-full rounded-lg overflow-hidden bg-primary/5 flex items-center justify-center">
-            <div className="space-y-4 w-full px-3 md:px-4">
-              <div className="h-1.5 md:h-2 w-3/4 bg-primary/20 rounded" />
-              <div className="h-1.5 md:h-2 w-1/2 bg-outline-variant/40 rounded" />
-              <div className="flex justify-between">
-                <div className="w-6 h-6 md:w-8 md:h-8 rounded-full bg-primary/30" />
-                <div className="w-6 h-6 md:w-8 md:h-8 rounded-full bg-secondary-container/30" />
-              </div>
-            </div>
+          <div className="w-full h-full rounded-lg overflow-hidden bg-surface-container-high/40">
+            <MockupUI variant="mobile-hero" />
           </div>
         </div>
 

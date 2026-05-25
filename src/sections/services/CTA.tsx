@@ -17,6 +17,8 @@ export default function CTASection() {
         <h3 className="font-display-lg text-display-lg mb-4">Let's Build Something Together</h3>
         <p className="font-body-md text-body-md text-on-surface-variant mb-8 max-w-xl mx-auto">
           Have a project in mind? Reach out and let's discuss how we can help bring your vision to life.
+          <br />
+          <span className="text-outline/60">Modern business websites starting from ₹15,000.</span>
         </p>
         <div className="flex flex-col sm:flex-row gap-3 justify-center">
           <Link to="/contact" className="bg-primary text-on-primary-container px-8 py-4 rounded-full font-label-md text-label-md hover:scale-[1.02] active:scale-95 transition-all duration-300">
