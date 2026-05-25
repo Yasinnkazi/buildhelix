@@ -36,21 +36,9 @@ export default function SchemaMarkup() {
         email: "buildhelix@gmail.com",
         priceRange: "₹10,000–₹50,000",
         areaServed: [
-          {
-            "@type": "City",
-            name: "Mumbai",
-            sameAs: "https://en.wikipedia.org/wiki/Mumbai",
-          },
-          {
-            "@type": "City",
-            name: "Navi Mumbai",
-            sameAs: "https://en.wikipedia.org/wiki/Navi_Mumbai",
-          },
-          {
-            "@type": "City",
-            name: "Thane",
-            sameAs: "https://en.wikipedia.org/wiki/Thane",
-          },
+          { "@type": "City", "name": "Mumbai", "sameAs": "https://en.wikipedia.org/wiki/Mumbai" },
+          { "@type": "City", "name": "Navi Mumbai", "sameAs": "https://en.wikipedia.org/wiki/Navi_Mumbai" },
+          { "@type": "City", "name": "Thane", "sameAs": "https://en.wikipedia.org/wiki/Thane" },
         ],
         address: {
           "@type": "PostalAddress",
@@ -65,7 +53,23 @@ export default function SchemaMarkup() {
           "Web Application Development",
           "UI/UX Design",
           "SEO Setup",
+          "Gym Website Design",
+          "Restaurant Website Design",
+          "Apparel Brand Website Design",
+          "Startup Website Development",
+          "Printing Business Website Design",
         ],
+        hasOfferCatalog: {
+          "@type": "OfferCatalog",
+          "name": "Website Design Services",
+          "itemListElement": [
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Gym Website Design Mumbai" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Restaurant Website Design Mumbai" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Apparel Brand Website Design" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Startup Website Development Mumbai" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Printing Business Website Design Mumbai" } },
+          ],
+        },
       },
       {
         "@type": "WebSite",

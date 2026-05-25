@@ -8,6 +8,13 @@ const Services = lazy(() => import("./pages/Services"));
 const Projects = lazy(() => import("./pages/Projects"));
 const About = lazy(() => import("./pages/About"));
 const Contact = lazy(() => import("./pages/Contact"));
+const GymWebsites = lazy(() => import("./pages/landing/GymWebsites"));
+const RestaurantWebsites = lazy(() => import("./pages/landing/RestaurantWebsites"));
+const ApparelWebsites = lazy(() => import("./pages/landing/ApparelWebsites"));
+const StartupWebsites = lazy(() => import("./pages/landing/StartupWebsites"));
+const PrintingWebsites = lazy(() => import("./pages/landing/PrintingWebsites"));
+const Insights = lazy(() => import("./pages/insights/Insights"));
+const InsightArticle = lazy(() => import("./pages/insights/InsightArticle"));
 
 function PageLoading() {
   return (
@@ -29,6 +36,14 @@ export default function App() {
               <Route path="/projects" element={<Projects />} />
               <Route path="/about" element={<About />} />
               <Route path="/contact" element={<Contact />} />
+              <Route path="/gym-websites-mumbai" element={<GymWebsites />} />
+              <Route path="/restaurant-website-design" element={<RestaurantWebsites />} />
+              <Route path="/apparel-brand-websites" element={<ApparelWebsites />} />
+              <Route path="/startup-websites-mumbai" element={<StartupWebsites />} />
+              <Route path="/printing-business-websites" element={<PrintingWebsites />} />
+              <Route path="/insights" element={<Insights />} />
+              <Route path="/insights/:slug" element={<InsightArticle />} />
+              <Route path="*" element={<Home />} />
             </Route>
           </Routes>
         </Suspense>

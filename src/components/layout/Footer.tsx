@@ -44,7 +44,7 @@ export default function Footer() {
           </button>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-10 md:gap-12">
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-10 md:gap-12">
           <div className="flex flex-col gap-3">
             <h4 className="font-label-sm text-label-sm text-primary uppercase tracking-widest">Navigation</h4>
             {NAV_ITEMS.map((item) => (
@@ -56,6 +56,23 @@ export default function Footer() {
                 {item.label}
               </Link>
             ))}
+          </div>
+
+          <div className="flex flex-col gap-3">
+            <h4 className="font-label-sm text-label-sm text-primary uppercase tracking-widest">Services</h4>
+            <Link to="/gym-websites-mumbai" className="font-label-sm text-label-sm text-on-surface-variant/60 hover:text-primary transition-all duration-300">Gym Websites</Link>
+            <Link to="/restaurant-website-design" className="font-label-sm text-label-sm text-on-surface-variant/60 hover:text-primary transition-all duration-300">Restaurant Websites</Link>
+            <Link to="/apparel-brand-websites" className="font-label-sm text-label-sm text-on-surface-variant/60 hover:text-primary transition-all duration-300">Apparel Brand Websites</Link>
+            <Link to="/startup-websites-mumbai" className="font-label-sm text-label-sm text-on-surface-variant/60 hover:text-primary transition-all duration-300">Startup Websites</Link>
+            <Link to="/printing-business-websites" className="font-label-sm text-label-sm text-on-surface-variant/60 hover:text-primary transition-all duration-300">Printing Websites</Link>
+          </div>
+
+          <div className="flex flex-col gap-3">
+            <h4 className="font-label-sm text-label-sm text-primary uppercase tracking-widest">Resources</h4>
+            <Link to="/insights" className="font-label-sm text-label-sm text-on-surface-variant/60 hover:text-primary transition-all duration-300">Insights</Link>
+            <Link to="/projects" className="font-label-sm text-label-sm text-on-surface-variant/60 hover:text-primary transition-all duration-300">Case Studies</Link>
+            <Link to="/services" className="font-label-sm text-label-sm text-on-surface-variant/60 hover:text-primary transition-all duration-300">All Services</Link>
+            <Link to="/about" className="font-label-sm text-label-sm text-on-surface-variant/60 hover:text-primary transition-all duration-300">About HELIX</Link>
           </div>
 
           <div className="flex flex-col gap-3">
