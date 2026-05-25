@@ -26,8 +26,8 @@ export default function Home() {
   return (
     <>
       <SEO
-        title="Digital Systems for Modern Businesses"
-        description="Websites, automation, branding, and scalable systems designed for the next generation of businesses. Explore our live portfolio of deployed platforms."
+        title="Website Designer Mumbai — Modern Business Websites"
+        description="Website designer in Mumbai building modern websites for restaurants, gyms, apparel brands, and startups. Responsive, premium, and built to convert."
         ogUrl="https://buildhelix.org"
       />
       <Hero />

@@ -36,8 +36,9 @@ export default function Hero() {
           <span className="text-primary-fixed-dim">Something Modern.</span>
         </h1>
         <p className="font-body-md text-body-md text-on-surface-variant max-w-md leading-relaxed">
-          Based in India, we build modern websites and brand experiences for
-          businesses, restaurants, gyms, apparel brands, and studios.
+          Based in Mumbai, we build modern websites and brand experiences for
+          businesses, restaurants, gyms, apparel brands, and studios across
+          Navi Mumbai and Thane.
         </p>
       </motion.div>
 

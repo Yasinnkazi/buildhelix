@@ -8,8 +8,8 @@ export default function Projects() {
   return (
     <div className="relative mesh-gradient">
       <SEO
-        title="Portfolio — Live Projects"
-        description="View our portfolio of live deployed websites for restaurants, gyms, apparel brands, architecture studios, and digital agencies. Built with React and modern frameworks."
+        title="Website Design Portfolio Mumbai — Live Projects"
+        description="View our portfolio of live websites for restaurants, gyms, apparel brands, and architecture studios in Mumbai. Each project is deployed and operational."
         ogUrl="https://buildhelix.org/projects"
       />
       <Hero />

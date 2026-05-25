@@ -95,8 +95,8 @@ export default function About() {
     <div className="relative pt-40 pb-24 overflow-hidden">
       <canvas className="fixed inset-0 z-[-1] opacity-40 pointer-events-none" id="particleCanvas" />
       <SEO
-        title="About — Digital Studio Mumbai"
-        description="HELIX is a Mumbai-based digital studio specializing in modern website design and development for businesses, restaurants, gyms, and apparel brands."
+        title="About HELIX — Website Designer in Mumbai"
+        description="HELIX is a Mumbai-based website design studio. We build modern websites for restaurants, gyms, apparel brands, and local businesses across Mumbai, Navi Mumbai, and Thane."
         ogUrl="https://buildhelix.org/about"
       />
       <Hero />

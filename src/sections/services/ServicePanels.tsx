@@ -6,7 +6,7 @@ const services = [
     label: "Development",
     title: "Website Development",
     description:
-      "Modern, responsive websites built with React, Vite, and Tailwind CSS. We focus on clean code, smooth animations, and performance — creating digital presences that represent your brand well across every device.",
+      "Modern, responsive websites built with React, Vite, and Tailwind CSS. We build websites for restaurants, gyms, apparel brands, and local businesses across Mumbai — with clean code, smooth animations, and performance that converts.",
     tags: ["React", "Vite", "Framer Motion", "Tailwind CSS", "Responsive"],
     reverse: false,
     image:
@@ -15,10 +15,10 @@ const services = [
   {
     id: "02",
     label: "SEO & Local",
-    title: "Local Search Optimization",
+    title: "Local SEO for Mumbai Businesses",
     description:
-      "Help your business get found locally. We optimize Google Business profiles, improve local search visibility, and make sure potential customers can find you when it matters most.",
-    tags: ["Google Business", "Local SEO", "Search Presence"],
+      "Help your business get found by customers in Mumbai, Navi Mumbai, and Thane. We optimize Google Business profiles, improve local search rankings, and make sure nearby customers can find you when it matters most.",
+    tags: ["Google Business", "Local SEO", "Mumbai", "Search Presence"],
     reverse: true,
     image:
       "https://lh3.googleusercontent.com/aida-public/AB6AXuDLk9hFbLPW6f5CVNE5y77j3L2yCXdm5bvHrTitCJqHYwTSRg102BH1c3gqkfYsTERBF35MLPBuxU6MRttVDG0zR7GesV1sg_RaAFFG6ki4wc9U9NPYq697ZqxSBhJiQa7zMyWDJNf25kKx2d5AIm7WQbo0ZFaORBDXIKtk490daqVHlEs_-aQlMoMF1NkfMmMvBfrgWN62is0Qn8v_3VKHsKdXKd2Xe4TESLpHwyQNbC04DiTLfsowKNZr-apVWrl0lK8CcUV63EzF",
@@ -28,7 +28,7 @@ const services = [
     label: "Design",
     title: "UI/UX & Brand Design",
     description:
-      "We design interfaces that look good and feel right. From wireframes to high-fidelity mockups, every design decision is made with your brand identity and user experience in mind.",
+      "We design interfaces that look good and feel right. From wireframes to high-fidelity mockups, every design decision is made with your brand identity and user experience in mind — helping Mumbai businesses stand out online.",
     tags: ["UI Design", "UX Strategy", "Brand Identity", "Prototyping"],
     reverse: false,
     image:
@@ -39,7 +39,7 @@ const services = [
     label: "Identity",
     title: "Brand Systems",
     description:
-      "We build cohesive brand identities — logos, color palettes, typography, and visual guidelines that create a consistent presence across your website, social media, and marketing materials.",
+      "We build cohesive brand identities — logos, color palettes, typography, and visual guidelines that create a consistent presence across your website, social media, and marketing materials. Perfect for startups and growing brands.",
     tags: ["Visual Identity", "Logo Design", "Brand Guidelines"],
     reverse: true,
     image:
@@ -50,7 +50,7 @@ const services = [
     label: "Infrastructure",
     title: "Hosting & Maintenance",
     description:
-      "Reliable hosting setup, domain management, and ongoing maintenance so your site stays fast, secure, and up-to-date. We handle the technical side so you can focus on running your business.",
+      "Reliable hosting setup, domain management, and ongoing maintenance so your website stays fast, secure, and up-to-date. We handle the technical side so you can focus on running your business in Mumbai.",
     tags: ["Hosting", "Domain Setup", "Maintenance", "Performance"],
     reverse: false,
     image:
@@ -107,7 +107,7 @@ export default function ServicePanels() {
             <div className={`w-full md:flex-1 h-48 md:h-[350px] rounded-lg overflow-hidden border border-white/5 ${service.reverse ? "md:order-1" : ""}`}>
               <img
                 src={service.image}
-                alt={service.title}
+                alt={`${service.title} — HELIX portfolio preview`}
                 loading="lazy"
                 className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-110 group-hover:scale-100"
               />

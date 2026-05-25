@@ -8,8 +8,8 @@ export default function Services() {
     <div className="relative pt-40 pb-24">
       <div className="noise-overlay fixed inset-0 z-[100]" />
       <SEO
-        title="Services — Website Design & Branding"
-        description="Professional website design, branding, and development services for businesses in Mumbai. Modern responsive websites for restaurants, gyms, apparel brands, and startups."
+        title="Website Design Services Mumbai — HELIX"
+        description="Professional website design services in Mumbai. We build responsive websites for restaurants, gyms, apparel brands, and startups. Modern, fast, and conversion-focused."
         ogUrl="https://buildhelix.org/services"
       />
       <Hero />

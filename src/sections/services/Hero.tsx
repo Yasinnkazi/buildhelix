@@ -34,7 +34,7 @@ export default function Hero() {
         >
           We build responsive websites, design brand identities, and help businesses
           establish a strong digital presence — from restaurants and gyms to apparel
-          brands and creative studios.
+          brands and creative studios across Mumbai, Navi Mumbai, and Thane.
         </motion.p>
       </motion.div>
     </section>

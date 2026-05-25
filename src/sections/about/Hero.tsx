@@ -34,8 +34,8 @@ export default function Hero() {
           >
             We're a small team focused on building modern websites and brand experiences
             for businesses that want to stand out. We work with restaurants, gyms, apparel
-            brands, studios, and local businesses — helping them build a digital presence
-            they can be proud of.
+            brands, studios, and local businesses across Mumbai, Navi Mumbai, and Thane —
+            helping them build a digital presence they can be proud of.
           </motion.p>
         </div>
         <div className="md:col-span-4 hidden md:block">

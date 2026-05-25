@@ -6,8 +6,8 @@ export default function Contact() {
   return (
     <div className="relative pt-40 pb-24 px-margin-mobile md:px-margin-desktop max-w-7xl mx-auto">
       <SEO
-        title="Contact — Get a Website Quote"
-        description="Ready to build your website? Contact HELIX — Mumbai-based website designer for businesses, restaurants, gyms, and startups. Free consultation within 24 hours."
+        title="Contact HELIX — Website Designer Mumbai | Free Consultation"
+        description="Contact HELIX, your website designer in Mumbai. Get a free consultation for your restaurant, gym, apparel brand, or startup website. We respond within 24 hours."
         ogUrl="https://buildhelix.org/contact"
       />
       <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none">

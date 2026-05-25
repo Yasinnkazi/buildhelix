@@ -49,7 +49,7 @@ export default function Hero() {
           <div className="w-full h-full rounded-lg overflow-hidden bg-surface-container-high/40">
             <img
               className="w-full h-full object-cover opacity-60 grayscale mix-blend-screen"
-              alt="Digital dashboard preview"
+              alt="HELIX website design dashboard preview — modern business website showcase"
               src="https://lh3.googleusercontent.com/aida-public/AB6AXuDyOBHNz0RYFMWjTifx54S6DMzqrOkrN1S_llOnlqzuGcZMnjIxOG1s-ejTdWxRN50RiM21KrNsMhUY0M9A03a1CaP1IBSYAbE0KsOXX3E_WjtiAw8iNyXcCBFfjpK9J1zkk1ReyXZUFcjfWIXVBporIlR_vPsq3Uk651G3HFNbFqOudLVPsAYHVNpWcOsX2-nTE_Tm0Mjp2bnbB1mIkfpoF1WwbFjHwOYC525g3tF_pifQdimkOpuLS2l8OkEsjbNKLDwzCzo6lMC9"
             />
           </div>
