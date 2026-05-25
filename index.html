@@ -28,6 +28,35 @@
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
     <link rel="preconnect" href="https://www.googletagmanager.com" />
     <link rel="preconnect" href="https://www.google-analytics.com" />
+
+    <!-- Google Analytics 4 — Vite replaces %VITE_GA_ID% at build time; no-op when unset -->
+    <script>
+      (function() {
+        var id = "%VITE_GA_ID%";
+        if (!id || id.indexOf("VITE_GA_ID") !== -1) return;
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', id);
+        var s = document.createElement('script');
+        s.async = true;
+        s.src = 'https://www.googletagmanager.com/gtag/js?id=' + id;
+        document.head.appendChild(s);
+      })();
+    </script>
+
+    <!-- Microsoft Clarity — no-op when VITE_CLARITY_ID is unset -->
+    <script>
+      (function() {
+        var id = "%VITE_CLARITY_ID%";
+        if (!id || id.indexOf("VITE_CLARITY_ID") !== -1) return;
+        (function(c,l,a,r,i,t,y){
+          c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+          t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+          y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", id);
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>
