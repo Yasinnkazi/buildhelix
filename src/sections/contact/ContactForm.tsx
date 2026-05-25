@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { trackFormSubmission } from "../../utils/analytics";
 
 const EMAIL_SUBJECT = encodeURIComponent("Project Inquiry — HELIX");
 
@@ -15,6 +16,12 @@ export default function ContactForm() {
       timeline: (form.elements.namedItem("timeline") as HTMLSelectElement)?.value || "",
       details: (form.elements.namedItem("details") as HTMLTextAreaElement)?.value || "",
     };
+
+    trackFormSubmission({
+      project_type: fields.projectType,
+      budget: fields.budget,
+      timeline: fields.timeline,
+    });
 
     const body = encodeURIComponent(
       [

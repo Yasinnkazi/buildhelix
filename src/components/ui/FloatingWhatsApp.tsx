@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { trackWhatsAppClick } from "../../utils/analytics";
 
 const WHATSAPP_NUMBER = "919004556455";
 const WHATSAPP_MSG = encodeURIComponent(
@@ -11,6 +12,7 @@ export default function FloatingWhatsApp() {
       href={`https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MSG}`}
       target="_blank"
       rel="noopener noreferrer"
+      onClick={() => trackWhatsAppClick("floating_button")}
       initial={{ opacity: 0, scale: 0 }}
       animate={{ opacity: 1, scale: 1 }}
       whileHover={{ scale: 1.1 }}

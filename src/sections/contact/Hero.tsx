@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { trackWhatsAppClick, trackEmailClick } from "../../utils/analytics";
 
 const WHATSAPP_NUMBER = "919004556455";
 const WHATSAPP_MSG = encodeURIComponent(
@@ -48,6 +49,7 @@ export default function Hero() {
       >
         <a
           href={`mailto:buildhelix@gmail.com?subject=${EMAIL_SUBJECT}&body=${EMAIL_BODY}`}
+          onClick={() => trackEmailClick("contact_card")}
           className="group flex items-center gap-5 p-5 rounded-lg transition-all duration-500"
           style={{
             backdropFilter: "blur(24px)",
@@ -70,6 +72,7 @@ export default function Hero() {
           href={`https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MSG}`}
           target="_blank"
           rel="noopener noreferrer"
+          onClick={() => trackWhatsAppClick("contact_card")}
           className="group flex items-center gap-5 p-5 rounded-lg transition-all duration-500"
           style={{
             backdropFilter: "blur(24px)",
@@ -119,6 +122,7 @@ export default function Hero() {
           href={`https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MSG}`}
           target="_blank"
           rel="noopener noreferrer"
+          onClick={() => trackWhatsAppClick("contact_cta")}
           className="flex items-center gap-2 px-6 py-3 rounded-full bg-primary text-on-primary-container font-label-md text-label-md hover:scale-[1.02] active:scale-95 transition-all duration-300 shadow-lg shadow-primary/20"
         >
           <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5" aria-hidden="true">
@@ -128,6 +132,7 @@ export default function Hero() {
         </a>
         <a
           href={`mailto:buildhelix@gmail.com?subject=${EMAIL_SUBJECT}&body=${EMAIL_BODY}`}
+          onClick={() => trackEmailClick("contact_cta")}
           className="flex items-center gap-2 px-6 py-3 rounded-full border border-outline-variant bg-transparent text-on-surface font-label-md text-label-md hover:bg-white/5 active:bg-white/10 transition-all duration-300"
         >
           <span className="material-symbols-outlined text-[20px] text-primary">alternate_email</span>

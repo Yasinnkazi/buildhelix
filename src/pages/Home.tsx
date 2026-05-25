@@ -28,7 +28,7 @@ export default function Home() {
       <SEO
         title="Digital Systems for Modern Businesses"
         description="Websites, automation, branding, and scalable systems designed for the next generation of businesses. Explore our live portfolio of deployed platforms."
-        ogUrl="https://studio.buildhelix.org"
+        ogUrl="https://buildhelix.org"
       />
       <Hero />
       <Stats />

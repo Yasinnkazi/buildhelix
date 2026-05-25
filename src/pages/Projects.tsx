@@ -8,9 +8,9 @@ export default function Projects() {
   return (
     <div className="relative mesh-gradient">
       <SEO
-        title="Portfolio"
-        description="Five deployed platforms spanning AI content engines, ambient computing, real-time analytics, and architectural design technology. Every project is live and operational."
-        ogUrl="https://studio.buildhelix.org/projects"
+        title="Portfolio — Live Projects"
+        description="View our portfolio of live deployed websites for restaurants, gyms, apparel brands, architecture studios, and digital agencies. Built with React and modern frameworks."
+        ogUrl="https://buildhelix.org/projects"
       />
       <Hero />
       <ProjectShowcase />

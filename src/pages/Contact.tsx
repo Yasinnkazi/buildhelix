@@ -6,9 +6,9 @@ export default function Contact() {
   return (
     <div className="relative pt-40 pb-24 px-margin-mobile md:px-margin-desktop max-w-7xl mx-auto">
       <SEO
-        title="Contact"
-        description="Ready to build something modern? Reach out to HELIX for web development, automation, branding, and digital infrastructure."
-        ogUrl="https://studio.buildhelix.org/contact"
+        title="Contact — Get a Website Quote"
+        description="Ready to build your website? Contact HELIX — Mumbai-based website designer for businesses, restaurants, gyms, and startups. Free consultation within 24 hours."
+        ogUrl="https://buildhelix.org/contact"
       />
       <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
         <div

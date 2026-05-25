@@ -95,9 +95,9 @@ export default function About() {
     <div className="relative pt-40 pb-24 overflow-hidden">
       <canvas className="fixed inset-0 z-[-1] opacity-40 pointer-events-none" id="particleCanvas" />
       <SEO
-        title="About"
-        description="We don't build features; we engineer digital nervous systems. At HELIX, we believe that scalable infrastructure is the only sustainable path to innovation."
-        ogUrl="https://studio.buildhelix.org/about"
+        title="About — Digital Studio Mumbai"
+        description="HELIX is a Mumbai-based digital studio specializing in modern website design and development for businesses, restaurants, gyms, and apparel brands."
+        ogUrl="https://buildhelix.org/about"
       />
       <Hero />
       <MindsetGrid />

@@ -82,6 +82,11 @@ export default function Navbar() {
 
         <Link
           to="/contact"
+          onClick={() => {
+            if (typeof window !== "undefined" && (window as any).gtag) {
+              (window as any).gtag("event", "cta_click", { event_category: "conversion", event_label: "navbar_book_a_call", value: 1 });
+            }
+          }}
           className="hidden md:inline-flex bg-primary text-on-primary-container px-6 py-2.5 rounded-full font-label-md text-label-md hover:scale-[1.02] active:scale-95 transition-all duration-300 shadow-lg shadow-primary/20"
         >
           Book a Call
@@ -161,7 +166,12 @@ export default function Navbar() {
                   <Link
                     to="/contact"
                     className="inline-flex bg-primary text-on-primary-container px-12 py-4 rounded-full font-label-md text-label-md hover:scale-[1.02] active:scale-95 transition-all duration-300 shadow-lg shadow-primary/20"
-                    onClick={() => setMobileOpen(false)}
+                    onClick={() => {
+                      setMobileOpen(false);
+                      if (typeof window !== "undefined" && (window as any).gtag) {
+                        (window as any).gtag("event", "cta_click", { event_category: "conversion", event_label: "drawer_book_a_call", value: 1 });
+                      }
+                    }}
                   >
                     Book a Call
                   </Link>
